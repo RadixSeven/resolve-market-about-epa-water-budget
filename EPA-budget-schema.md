@@ -36,6 +36,65 @@
 
 All fields except `name` and `amount` are optional.
 
+## Water quality classification fields
+
+Each line item (leaf or parent) carries the following optional fields
+for classifying its relevance to water quality programs.
+
+### Classification
+
+```json
+{
+  "water_quality_relevance": "for water quality programs | partially for water quality programs | not for water quality programs | unknown",
+  "water_quality_relevance_certainty": 3
+}
+```
+
+| Field | Values | Meaning |
+|-------|--------|---------|
+| `water_quality_relevance` | `"for water quality programs"` | Funding is primarily or entirely directed at water quality activities |
+| | `"partially for water quality programs"` | A meaningful share of funding supports water quality, but the item also covers non-water activities |
+| | `"not for water quality programs"` | Funding is not directed at water quality (e.g. air quality, chemical safety, general overhead) |
+| | `"unknown"` | Insufficient information to classify (e.g. unspecified earmarks, zeroed items) |
+| `water_quality_relevance_certainty` | `5` | Certainty > 99 % |
+| | `4` | 90 % < certainty ≤ 99 % |
+| | `3` | 50 % < certainty ≤ 90 % |
+| | `2` | 25 % < certainty ≤ 50 % |
+| | `1` | Certainty ≤ 25 % |
+
+### Evidence ratings
+
+Each line item also carries seven 1–5 evidence ratings that document
+**why** it received its classification. Higher values indicate stronger
+evidence for the dimension described.
+
+```json
+{
+  "wq_evidence_name_reference": 3,
+  "wq_evidence_authorizing_statute": 4,
+  "wq_evidence_infrastructure": 2,
+  "wq_evidence_monitoring": 1,
+  "wq_evidence_contamination": 1,
+  "wq_evidence_general_purpose": 2,
+  "wq_evidence_non_water": 1
+}
+```
+
+| Field | 1 (low) | 5 (high) |
+|-------|---------|----------|
+| `wq_evidence_name_reference` | Name does not mention water | Name explicitly says "water quality", "clean water", "drinking water", etc. |
+| `wq_evidence_authorizing_statute` | No statute cited, or statute is not water-specific | Core water quality statute (CWA/FWPCA, SDWA, WIFIA) |
+| `wq_evidence_infrastructure` | Does not fund water infrastructure | Primarily funds water/wastewater/stormwater infrastructure |
+| `wq_evidence_monitoring` | Does not fund water quality monitoring | Primarily funds water quality monitoring, testing, or assessment |
+| `wq_evidence_contamination` | Does not address water contamination | Primarily addresses contamination of water resources (groundwater, surface water) |
+| `wq_evidence_general_purpose` | Narrowly water-specific program | Completely general-purpose or multi-media (covers many program areas) |
+| `wq_evidence_non_water` | No non-water indicators | Entirely non-water program (e.g. air quality, chemical safety) |
+
+The first five evidence fields are "pro-water-quality" indicators (higher
+values suggest the item IS for water quality). The last two are
+"anti-water-quality" indicators (higher values suggest the item is NOT
+for water quality or is too general to classify as water-specific).
+
 ## Double-counting rules
 
 1. If an item has `sub_items`, its `amount` is the **envelope total**
