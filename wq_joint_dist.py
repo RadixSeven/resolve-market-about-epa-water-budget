@@ -37,8 +37,10 @@ def main() -> None:
             max_relevance_len = max(max_relevance_len, len(relevance))
             counts[(relevance, certainty, )] += 1
 
+    print("|Relevance|Certainty|Count|")
+    print("|---|---|---|")
     for (relevance, certainty), count in sorted(counts.items(), key=lambda x: (-x[1], x[0][1], x[0][0])):
-        print(f"relevance:{relevance:{max_relevance_len}} certainty:{certainty} count:{count}")
+        print(f"|{relevance:{max_relevance_len}}| {certainty} | {count:2} |")
 
 
 if __name__ == "__main__":
