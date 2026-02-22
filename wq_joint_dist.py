@@ -6,7 +6,10 @@ import sys
 from collections import Counter
 
 
-def extract_pairs(obj):
+type JsonValue = None | bool | int | float | str | list[JsonValue] | JsonObject
+type JsonObject = dict[str, JsonValue]
+
+def extract_pairs(obj: JsonValue) -> list[tuple[int, str]]:
     """Recursively find all (certainty, relevance) pairs in the JSON."""
     pairs = []
     if isinstance(obj, dict):
@@ -20,7 +23,7 @@ def extract_pairs(obj):
     return pairs
 
 
-def main():
+def main() -> None:
     if len(sys.argv) < 2:
         print(f"Usage: {sys.argv[0]} <json-file> [json-file ...]", file=sys.stderr)
         sys.exit(1)
