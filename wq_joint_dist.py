@@ -28,15 +28,17 @@ def main() -> None:
         print(f"Usage: {sys.argv[0]} <json-file> [json-file ...]", file=sys.stderr)
         sys.exit(1)
 
+    max_relevance_len = 0
     counts = Counter()
     for path in sys.argv[1:]:
         with open(path) as f:
             data = json.load(f)
         for certainty, relevance in extract_pairs(data):
-            counts[(certainty, relevance)] += 1
+            max_relevance_len = max(max_relevance_len, len(relevance))
+            counts[(relevance, certainty, )] += 1
 
-    for (certainty, relevance), count in sorted(counts.items()):
-        print(f"{count} certainty: {certainty} relevance: {relevance}")
+    for (relevance, certainty), count in sorted(counts.items(), key=lambda x: (-x[1], x[0][1], x[0][0])):
+        print(f"relevance:{relevance:{max_relevance_len}} certainty:{certainty} count:{count}")
 
 
 if __name__ == "__main__":
