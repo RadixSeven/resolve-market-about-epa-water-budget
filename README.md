@@ -2,12 +2,21 @@ This repo records my data for resolving [the prediction marketI created about wa
 
 # Process
 
+# Produce the initial JSON files
+
+I excerpted files from the EPA appropriations text into `EPA-appropriations-text-FY2024-HR4366.txt`, `EPA-appropriations-text-FY2025-HR1968.html`, and `EPA-appropriations-text-FY2026-HR6938.html`. I had Claude create `EPA-budget-schema.md` based on `EPA-appropriations-text-FY2026-HR6938.html`
+It then created the initial JSON files `epa_fy2025_hr1968_div_a_title_vii.json` and `epa_fy2026_hr6938_div_b_title_ii.json` based on the schema and the text files.
+Next, I created the `prompts` directory and added `01-schema-update-prompt.md`,
+asking Claude Code to update the schema to include fields for classifying water quality relevance and certainty, and to add those fields to the existing JSON files.
+Then, I added `02-consistency-check.md` to do a quick check between the two
+JSON files. It caught one place that would be good to rename for easier
+comparison.
+
 ## Distribution of relevance
 After the extracting the JSON and attaching the first ratings (that would be prompts 01 and 02 in the `prompts` directory), the distributions of the confidence ratings were:
 
 ```console
-$ rg 'water_quality_relevance_certainty":' epa_fy2026_hr6938_div_b_title_i
-i.json |  sed -E 's/ *"(water_quality_relevance_certainty)": *
+$ rg 'water_quality_relevance_certainty":' epa_fy2026_hr6938_div_b_title_ii.json |  sed -E 's/ *"(water_quality_relevance_certainty)": *
 ([0-9]+).*/\1: \2/' | sort | uniq -c
 
       7 water_quality_relevance_certainty: 2
@@ -15,8 +24,7 @@ i.json |  sed -E 's/ *"(water_quality_relevance_certainty)": *
       6 water_quality_relevance_certainty: 4
      28 water_quality_relevance_certainty: 5
 
-$ rg 'water_quality_relevance_certainty"' epa_fy2025_hr1968_div_a_title_vi
-i.json |  sed -E 's/ *"(water_quality_relevance_certainty)": *
+$ rg 'water_quality_relevance_certainty"' epa_fy2025_hr1968_div_a_title_vii.json |  sed -E 's/ *"(water_quality_relevance_certainty)": *
 ([0-9]+).*/\1: \2/' | sort | uniq -c
 
       2 water_quality_relevance_certainty: 1
@@ -62,3 +70,59 @@ python3 wq_joint_dist.py epa_fy2026_hr6938_div_b_title_ii.json
 | for water quality programs           | 3         | 1     |
 | for water quality programs           | 4         | 1     |
 | not for water quality programs       | 4         | 1     |
+
+(You need to use the version at 25888cc127f6d606136563236a7ddba3890a3445 to get
+these results.)
+
+## Redo for line-items only
+
+After looking at the above and doing some spot-checks, I realized I only
+cared about certainty and relevance for line items (i.e., leaf nodes in the
+budget hierarchy). So I went back and added a filter to only include line items.
+
+```bash
+python3 wq_joint_dist.py epa_fy2025_hr1968_div_a_title_vii.json
+```
+
+| Relevance                            | Certainty | Count |
+|--------------------------------------|-----------|-------|
+| for water quality programs           | 5         | 16    |
+| for water quality programs           | 4         | 1     |
+| for water quality programs           | 3         | 1     |
+| not for water quality programs       | 5         | 3     |
+| not for water quality programs       | 4         | 1     |
+| not for water quality programs       | 3         | 2     |
+| partially for water quality programs | 4         | 2     |
+| partially for water quality programs | 3         | 9     |
+| partially for water quality programs | 2         | 2     |
+| unknown                              | 2         | 1     |
+| unknown                              | 1         | 2     |
+
+```bash
+python3 wq_joint_dist.py epa_fy2026_hr6938_div_b_title_ii.json
+```
+
+| Relevance                            | Certainty | Count |
+|--------------------------------------|-----------|-------|
+| for water quality programs           | 5         | 20    |
+| for water quality programs           | 4         | 1     |
+| for water quality programs           | 3         | 1     |
+| not for water quality programs       | 5         | 4     |
+| not for water quality programs       | 4         | 1     |
+| not for water quality programs       | 3         | 2     |
+| partially for water quality programs | 4         | 2     |
+| partially for water quality programs | 3         | 13    |
+| partially for water quality programs | 2         | 4     |
+| unknown                              | 2         | 2     |
+
+## Add earmarks data
+
+After looking at the FY2026 data labeled "partially for water quality programs"
+(which I generally agreed with), I started to look at the "unknown" items, which
+were all earmarks.
+
+I added the earmarks data from the FY2026 bill to the repository. But that
+will be a lot of work to incorporate (and to find the FY2025 earmarks data).
+
+I want to see how certain the conclusions are given the current data before
+I try to get more certainty.
