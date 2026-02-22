@@ -50,17 +50,27 @@ for classifying its relevance to water quality programs.
 }
 ```
 
-| Field | Values | Meaning |
-|-------|--------|---------|
-| `water_quality_relevance` | `"for water quality programs"` | Funding is primarily or entirely directed at water quality activities |
-| | `"partially for water quality programs"` | A meaningful share of funding supports water quality, but the item also covers non-water activities |
-| | `"not for water quality programs"` | Funding is not directed at water quality (e.g. air quality, chemical safety, general overhead) |
-| | `"unknown"` | Insufficient information to classify (e.g. unspecified earmarks, zeroed items) |
-| `water_quality_relevance_certainty` | `5` | Certainty > 99 % |
-| | `4` | 90 % < certainty ≤ 99 % |
-| | `3` | 50 % < certainty ≤ 90 % |
-| | `2` | 25 % < certainty ≤ 50 % |
-| | `1` | Certainty ≤ 25 % |
+#### Water quality relevance values
+The following values are used to classify water quality relevance in the `water_quality_relevance` field.
+
+| Value                                    | Meaning |
+|------------------------------------------|---------|
+| `"for water quality programs"`           | Funding is primarily or entirely directed at water quality activities |
+| `"partially for water quality programs"` | A meaningful share of funding supports water quality, but the item also covers non-water activities |
+| `"not for water quality programs"`       | Funding is not directed at water quality (e.g. air quality, chemical safety, general overhead) |
+| `"unknown"`                              | Insufficient information to classify (e.g. unspecified earmarks, zeroed items) |
+
+#### Water quality relevance certainty values
+
+The following values are used to classify certainty regarding the classification in the `water_quality_relevance` field. This is the certainty that the water quality relevance classification is correct. It is stored in the `water_quality_relevance_certainty` field.
+
+| Value | Meaning                 |
+|-------|-------------------------|
+| `5`   | Certainty > 99 %        |
+| `4`   | 90 % < certainty ≤ 99 % |
+| `3`   | 50 % < certainty ≤ 90 % |
+| `2`   | 25 % < certainty ≤ 50 % |
+| `1`   | Certainty ≤ 25 %        |
 
 ### Evidence ratings
 
