@@ -34,7 +34,16 @@
           "notes": [
             "FY2024 level was $19,530,000. Sec. 1801(7) substitutes '$17,500,000' for '$19,530,000'.",
             "FY2024 included $2,030,000 within this amount for Community Project Funding/CDS items. Sec. 1801(7) substitutes '$0' for '$2,030,000', zeroing out CDS earmarks."
-          ]
+          ],
+          "water_quality_relevance": "unknown",
+          "water_quality_relevance_certainty": 2,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Unallocated/general",
@@ -42,13 +51,31 @@
           "notes": [
             "Remainder of S&T not earmarked by provisos. Covers R&D activities including CERCLA research, personnel, travel, lab equipment, aircraft, and other operating expenses.",
             "In addition to the direct appropriation, $30,343,000 is transferred in from the Hazardous Substance Superfund account for S&T activities."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 1
         }
       ],
       "notes": [
         "Sec. 1801(7) anomaly: sets level at $756,073,000 (FY2024 was $758,103,000, a reduction of $2,030,000 matching the zeroed CDS earmarks).",
         "FY2024 terms and conditions apply with the substitutions specified in Sec. 1801(7)."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 2,
+      "wq_evidence_contamination": 2,
+      "wq_evidence_general_purpose": 5,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "Environmental Programs and Management",
@@ -65,7 +92,16 @@
               "amount": 30700000,
               "notes": [
                 "As specified in the FY2024 explanatory statement. Continues at FY2024 level."
-              ]
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 2,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 1,
+              "wq_evidence_general_purpose": 5,
+              "wq_evidence_non_water": 1
             },
             {
               "name": "Geographic Programs",
@@ -73,7 +109,16 @@
               "notes": [
                 "As specified in the FY2024 explanatory statement. Continues at FY2024 level.",
                 "Includes Great Lakes Restoration Initiative and other geographic programs. Up to $368,000,000 of GLRI funds may be transferred to other Federal agencies per the FY2024 administrative provisions."
-              ]
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 4,
+              "wq_evidence_name_reference": 2,
+              "wq_evidence_authorizing_statute": 2,
+              "wq_evidence_infrastructure": 3,
+              "wq_evidence_monitoring": 4,
+              "wq_evidence_contamination": 3,
+              "wq_evidence_general_purpose": 3,
+              "wq_evidence_non_water": 1
             },
             {
               "name": "Alaska Native contaminated lands grants",
@@ -81,7 +126,16 @@
               "available_until": "expended",
               "notes": [
                 "Grants to Alaska Native entities to address contamination on lands conveyed under the Alaska Native Claims Settlement Act. Up to $2,000,000 may be reserved for program administration."
-              ]
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 1,
+              "wq_evidence_contamination": 4,
+              "wq_evidence_general_purpose": 2,
+              "wq_evidence_non_water": 1
             },
             {
               "name": "Unallocated/general",
@@ -89,12 +143,30 @@
               "notes": [
                 "Remainder of main EPM appropriation not earmarked by provisos. Covers personnel, travel, motor vehicles, aircraft, reprints, library memberships, brownfields admin costs, coal combustion residual permit program, and up to $40,000 for official reception and representation expenses.",
                 "FY2025 level is $17,000,000 above FY2024 ($3,178,028,000). The increase is absorbed in this unallocated remainder."
-              ]
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 3,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 5,
+              "wq_evidence_non_water": 2
             }
           ],
           "notes": [
             "Sec. 1802(3) anomaly: sets level at $3,195,028,000 (FY2024 was $3,178,028,000, an increase of $17,000,000)."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "TSCA Service Fee Fund activities",
@@ -106,13 +178,31 @@
             "For activities under section 26(b)(1) of TSCA (15 U.S.C. 2625(b)(1)). $9,000,000 appropriated from general fund, offset by TSCA service fee receipts deposited as discretionary offsetting receipts, resulting in net $0 from general fund.",
             "Fees in excess of $9,000,000 are also retained in the TSCA Service Fee Fund.",
             "The Chemical Risk Review and Reduction program project must be allocated not less than the FY2014 appropriation level (excluding fees)."
-          ]
+          ],
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 4,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 5
         }
       ],
       "notes": [
         "Account total combines the main appropriation ($3,195,028,000 per Sec. 1802(3) anomaly) and the TSCA 'In addition' paragraph ($9,000,000 continuing at FY2024 rate).",
         "FY2024 terms and conditions apply. No proviso modifications specified for EPM in the CR."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 2,
+      "wq_evidence_contamination": 2,
+      "wq_evidence_general_purpose": 5,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "Office of Inspector General",
@@ -129,7 +219,16 @@
         "Continues at FY2024 level under Sec. 1101 (no anomaly).",
         "Subject to terms, conditions, and requirements specified under this heading in Senate Report 118-83.",
         "In addition to the direct appropriation, $11,328,000 is transferred in from the Hazardous Substance Superfund account."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 1,
+      "wq_evidence_contamination": 1,
+      "wq_evidence_general_purpose": 5,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "Buildings and Facilities",
@@ -139,7 +238,16 @@
       "notes": [
         "Continues at FY2024 level under Sec. 1101 (no anomaly).",
         "For construction, repair, improvement, extension, alteration, and purchase of fixed equipment or facilities."
-      ]
+      ],
+      "water_quality_relevance": "not for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 1,
+      "wq_evidence_contamination": 1,
+      "wq_evidence_general_purpose": 5,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "Hazardous Substance Superfund",
@@ -163,7 +271,16 @@
           "available_until": "2025-09-30",
           "notes": [
             "Paid to the OIG appropriation."
-          ]
+          ],
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 4,
+          "wq_evidence_non_water": 2
         },
         {
           "name": "Transfer to Science and Technology",
@@ -171,21 +288,48 @@
           "available_until": "2025-09-30",
           "notes": [
             "Paid to the S&T appropriation."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 2,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 4,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Unallocated/general (CERCLA response activities)",
           "amount": 496029000,
           "notes": [
             "Remainder for carrying out CERCLA, including sections 111(c)(3), (c)(5), (c)(6), and (e)(4). Funds may be allocated to other Federal agencies per CERCLA section 111(a)."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 4,
+          "wq_evidence_general_purpose": 2,
+          "wq_evidence_non_water": 2
         }
       ],
       "notes": [
         "Continues at FY2024 level under Sec. 1101 (no anomaly).",
         "Funded from the Hazardous Substance Superfund trust fund (sums available in the Trust Fund on September 30, 2023, not otherwise appropriated, per SARA section 517(a)) and up to $537,700,000 as a payment from general revenues per SARA section 517(b).",
         "Includes hire, maintenance, and operation of aircraft."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 1,
+      "wq_evidence_contamination": 4,
+      "wq_evidence_general_purpose": 2,
+      "wq_evidence_non_water": 2
     },
     {
       "name": "Leaking Underground Storage Tank Trust Fund Program",
@@ -196,7 +340,16 @@
         {
           "name": "Leaking underground storage tank cleanup (SWDA section 9003(h))",
           "amount": 64723000,
-          "statutory_reference": "Solid Waste Disposal Act, section 9003(h)"
+          "statutory_reference": "Solid Waste Disposal Act, section 9003(h)",
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 4,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 5,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 2
         },
         {
           "name": "Other SWDA provisions per IRC section 9508(c)",
@@ -205,12 +358,30 @@
           "notes": [
             "For carrying out provisions of the Solid Waste Disposal Act specified in IRC section 9508(c) other than section 9003(h).",
             "Administrator authorized to use these funds to implement SWDA section 9013 for financial assistance to federally recognized Indian tribes."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 4,
+          "wq_evidence_general_purpose": 2,
+          "wq_evidence_non_water": 2
         }
       ],
       "notes": [
         "Continues at FY2024 level under Sec. 1101 (no anomaly)."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 4,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 1,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 2,
+      "wq_evidence_contamination": 5,
+      "wq_evidence_general_purpose": 1,
+      "wq_evidence_non_water": 2
     },
     {
       "name": "Inland Oil Spill Programs",
@@ -221,7 +392,16 @@
         "Continues at FY2024 level under Sec. 1101 (no anomaly).",
         "Derived from the Oil Spill Liability Trust Fund.",
         "For EPA responsibilities under the Oil Pollution Act of 1990, including aircraft hire, maintenance, and operation."
-      ]
+      ],
+      "water_quality_relevance": "for water quality programs",
+      "water_quality_relevance_certainty": 3,
+      "wq_evidence_name_reference": 1,
+      "wq_evidence_authorizing_statute": 2,
+      "wq_evidence_infrastructure": 1,
+      "wq_evidence_monitoring": 2,
+      "wq_evidence_contamination": 5,
+      "wq_evidence_general_purpose": 1,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "State and Tribal Assistance Grants",
@@ -241,7 +421,16 @@
             "Up to $1,500,000 may be used for Clean Watersheds Needs Survey.",
             "Up to 2% (or $30,000,000, whichever greater) may be reserved for grants to tribes under FWPCA section 518(c).",
             "Up to 1.5% of aggregate CW SRF (less tribal set-aside) may be reserved for territories under FWPCA title II."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 5,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Drinking Water State Revolving Fund capitalization grants",
@@ -254,21 +443,48 @@
             "Up to 2% (or $20,000,000, whichever greater) may be reserved for grants to tribes under SDWA section 1452(i).",
             "Up to 1.5% may be reserved for territories under SDWA section 1452(j).",
             "Up to $12,000,000 shall be reserved for unregulated contaminant monitoring costs under SDWA section 1445(a)(2)(C)."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 5,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "US-Mexico Border water/wastewater infrastructure",
           "amount": 35000000,
           "notes": [
             "Architectural, engineering, planning, design, construction for high priority water/wastewater facilities in the US-Mexico border area. Colonia development restrictions apply."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 5,
+          "wq_evidence_authorizing_statute": 3,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Alaska rural and Native village water/wastewater",
           "amount": 39000000,
           "notes": [
             "Grants to State of Alaska. 25% State match required. Max 5% for admin/overhead. Awards must be consistent with statewide priority list; at least 25% for regional hub communities."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 5,
+          "wq_evidence_authorizing_statute": 4,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Brownfields (CERCLA section 104(k))",
@@ -276,19 +492,46 @@
           "statutory_reference": "CERCLA, section 104(k)",
           "notes": [
             "Grants, interagency agreements, and program support costs. At least 10% for persistent poverty counties."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 2,
+          "wq_evidence_non_water": 3
         },
         {
           "name": "Diesel emissions reduction grants (Energy Policy Act title VII, subtitle G)",
           "amount": 90000000,
-          "statutory_reference": "Energy Policy Act of 2005, title VII, subtitle G"
+          "statutory_reference": "Energy Policy Act of 2005, title VII, subtitle G",
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 5
         },
         {
           "name": "Targeted airshed grants",
           "amount": 67800000,
           "notes": [
             "In accordance with terms and conditions in the FY2024 explanatory statement."
-          ]
+          ],
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 5
         },
         {
           "name": "Small and disadvantaged community drinking water assistance (SDWA section 1459A(a)-(j))",
@@ -296,37 +539,100 @@
           "statutory_reference": "Safe Drinking Water Act, section 1459A(a)-(j) (42 U.S.C. 300j-19a)",
           "notes": [
             "May also be used by States to assist private well owners for contaminant-related activities, and to support underserved communities."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 4,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 2,
+          "wq_evidence_monitoring": 4,
+          "wq_evidence_contamination": 5,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Voluntary school and child care lead testing (SDWA section 1464(d))",
           "amount": 28000000,
-          "statutory_reference": "Safe Drinking Water Act, section 1464(d) (42 U.S.C. 300j-24(d))"
+          "statutory_reference": "Safe Drinking Water Act, section 1464(d) (42 U.S.C. 300j-24(d))",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 2,
+          "wq_evidence_monitoring": 5,
+          "wq_evidence_contamination": 4,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Lead service line replacement grants (SDWA section 1459B)",
           "amount": 22000000,
-          "statutory_reference": "Safe Drinking Water Act, section 1459B (42 U.S.C. 300j-19b)"
+          "statutory_reference": "Safe Drinking Water Act, section 1459B (42 U.S.C. 300j-19b)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 4,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Operational sustainability grants (SDWA section 1459A(l))",
           "amount": 6500000,
-          "statutory_reference": "Safe Drinking Water Act, section 1459A(l) (42 U.S.C. 300j-19a(l))"
+          "statutory_reference": "Safe Drinking Water Act, section 1459A(l) (42 U.S.C. 300j-19a(l))",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 3,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Sewer overflow and stormwater reuse grants (FWPCA section 104(b)(8))",
           "amount": 25500000,
-          "statutory_reference": "Federal Water Pollution Control Act, section 104(b)(8) (33 U.S.C. 1254(b)(8))"
+          "statutory_reference": "Federal Water Pollution Control Act, section 104(b)(8) (33 U.S.C. 1254(b)(8))",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 4,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Decentralized wastewater/alternative water source grants (FWPCA section 221)",
           "amount": 41000000,
-          "statutory_reference": "Federal Water Pollution Control Act, section 221 (33 U.S.C. 1301)"
+          "statutory_reference": "Federal Water Pollution Control Act, section 221 (33 U.S.C. 1301)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 5,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 4,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Water infrastructure workforce development (AWIA 2018 section 4304(b))",
           "amount": 5400000,
-          "statutory_reference": "America's Water Infrastructure Act of 2018, section 4304(b) (P.L. 115-270)"
+          "statutory_reference": "America's Water Infrastructure Act of 2018, section 4304(b) (P.L. 115-270)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 4,
+          "wq_evidence_name_reference": 4,
+          "wq_evidence_authorizing_statute": 4,
+          "wq_evidence_infrastructure": 3,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 2,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Post-consumer materials municipal grants (Save Our Seas 2.0 Act section 302(a))",
@@ -334,7 +640,16 @@
           "statutory_reference": "Save Our Seas 2.0 Act, section 302(a) (33 U.S.C. 4282(a))",
           "notes": [
             "Not more than 2% for administrative costs. May also provide grants to intertribal consortia, former Indian reservations in Oklahoma, and Alaska Native Villages."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 2,
+          "wq_evidence_authorizing_statute": 2,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 3
         },
         {
           "name": "Wildfire smoke preparedness grants (Clean Air Act section 103(b)(3))",
@@ -342,19 +657,46 @@
           "statutory_reference": "Clean Air Act, section 103(b)(3)",
           "notes": [
             "In accordance with FY2024 explanatory statement terms. Not more than 3% for administrative costs."
-          ]
+          ],
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 5
         },
         {
           "name": "Community Project Funding/CDS items (STAG line)",
           "amount": 0,
           "notes": [
             "FY2024 level was $38,693,000 for CDS items specified in the FY2024 explanatory statement. Sec. 1801(8) substitutes '$0' for '$38,693,000', completely eliminating this line item. This accounts for the entire $38,693,000 reduction from the FY2024 STAG total."
-          ]
+          ],
+          "water_quality_relevance": "unknown",
+          "water_quality_relevance_certainty": 1,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Assistance for small and underserved communities (SDWA section 1459F)",
           "amount": 2250000,
-          "statutory_reference": "Safe Drinking Water Act, section 1459F (42 U.S.C. 300j-19g)"
+          "statutory_reference": "Safe Drinking Water Act, section 1459F (42 U.S.C. 300j-19g)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 3,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Water systems technical assistance (AWIA 2018 section 2001)",
@@ -362,17 +704,44 @@
           "statutory_reference": "America's Water Infrastructure Act of 2018, section 2001 (P.L. 115-270, 42 U.S.C. 300j-3c note)",
           "notes": [
             "Administrator may award grants and contracts to tribes, intertribal consortia, public/private agencies, institutions, organizations, and individuals, and enter into interagency agreements."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 4,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 3,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Stormwater infrastructure grants (IIJA section 50217(b))",
           "amount": 2000000,
-          "statutory_reference": "Infrastructure Investment and Jobs Act, section 50217(b) (33 U.S.C. 1302f(b); P.L. 117-58)"
+          "statutory_reference": "Infrastructure Investment and Jobs Act, section 50217(b) (33 U.S.C. 1302f(b); P.L. 117-58)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 4,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Enhanced aquifer use and recharge grants (FWPCA section 124)",
           "amount": 3500000,
-          "statutory_reference": "Federal Water Pollution Control Act, section 124 (33 U.S.C. 1276)"
+          "statutory_reference": "Federal Water Pollution Control Act, section 124 (33 U.S.C. 1276)",
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 3,
+          "wq_evidence_monitoring": 3,
+          "wq_evidence_contamination": 3,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Categorical/multi-media grants to States and tribes",
@@ -381,7 +750,16 @@
             "Grants to States, federally recognized tribes, interstate agencies, tribal consortia, and air pollution control agencies for pollution prevention, control, and abatement.",
             "Of which: $46,250,000 for CERCLA section 128 (State response programs); $9,500,000 for Environmental Information Exchange Network grants; $1,475,000 for SWDA section 2007(f)(2) State grants (in addition to LUST funds); $18,512,000 of section 106 (FWPCA) grants for State water resources surveys and monitoring enhancements.",
             "Also includes grants under P.L. 104-134, Clean Air Act section 103 (PM monitoring), and SWDA section 2301 (coal combustion residuals)."
-          ]
+          ],
+          "water_quality_relevance": "partially for water quality programs",
+          "water_quality_relevance_certainty": 3,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 2,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 2
         },
         {
           "name": "Prior-year rescission offset",
@@ -389,7 +767,16 @@
           "notes": [
             "FY2024 permanently rescinded $1,500,000 of unobligated balances from pre-FY2012 'special project grants'/'special needs infrastructure grants'. The enumerated sub-items sum to $1,500,000 more than the account total in both FY2024 and FY2025. This reconciliation item reflects the netting of the rescission against new budget authority in the account total as scored.",
             "Under a CR, this one-time rescission from FY2024 does not repeat, but the FY2025 total ($4,380,245,000 = FY2024 $4,418,938,000 minus zeroed item 16 $38,693,000) inherits the same structural discrepancy."
-          ]
+          ],
+          "water_quality_relevance": "unknown",
+          "water_quality_relevance_certainty": 1,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 5,
+          "wq_evidence_non_water": 1
         }
       ],
       "notes": [
@@ -397,7 +784,16 @@
         "Three CDS/earmark provisions zeroed: $787,652,267 within CW SRF, $631,659,905 within DW SRF, and $38,693,000 standalone CDS grants. The SRF earmark zeroing does not change the SRF totals — it removes the earmark restrictions, freeing funds for general SRF capitalization.",
         "The second proviso under paragraph (1) of the FY2024 STAG heading (allowing up to $13,300,000 for CDS admin from combined SRF funds) is explicitly made inapplicable per Sec. 1801(8).",
         "FY2024 CDS procurement flexibility proviso continues for prior-year CDS grants but is moot for FY2025 since all FY2025 CDS amounts are zeroed."
-      ]
+      ],
+      "water_quality_relevance": "partially for water quality programs",
+      "water_quality_relevance_certainty": 4,
+      "wq_evidence_name_reference": 2,
+      "wq_evidence_authorizing_statute": 2,
+      "wq_evidence_infrastructure": 4,
+      "wq_evidence_monitoring": 2,
+      "wq_evidence_contamination": 2,
+      "wq_evidence_general_purpose": 3,
+      "wq_evidence_non_water": 1
     },
     {
       "name": "Water Infrastructure Finance and Innovation Program Account",
@@ -414,7 +810,16 @@
             "Of which $5,000,000 solely for projects described in WIFIA section 5026(9) (State infrastructure financing authorities, per WIFIA section 5033(e)).",
             "Loans must comply with criteria published in 85 FR 39189 (June 30, 2020). Administrator and OMB Director must certify compliance in advance.",
             "Fees collected under WIFIA sections 5029 and 5030 are also deposited in this account (in addition to appropriated amounts)."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 3,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 5,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 2,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 1
         },
         {
           "name": "Administrative expenses",
@@ -422,13 +827,31 @@
           "available_until": "2025-09-30",
           "notes": [
             "Separate 'In addition' paragraph for admin expenses, notwithstanding WIFIA section 5033."
-          ]
+          ],
+          "water_quality_relevance": "for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 2,
+          "wq_evidence_authorizing_statute": 5,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 3,
+          "wq_evidence_non_water": 1
         }
       ],
       "notes": [
         "Continues at FY2024 level under Sec. 1101 (no anomaly).",
         "Total combines the loan subsidy appropriation ($64,634,000, available until expended) and the administrative expenses appropriation ($7,640,000, available until September 30, 2025)."
-      ]
+      ],
+      "water_quality_relevance": "for water quality programs",
+      "water_quality_relevance_certainty": 5,
+      "wq_evidence_name_reference": 4,
+      "wq_evidence_authorizing_statute": 5,
+      "wq_evidence_infrastructure": 5,
+      "wq_evidence_monitoring": 1,
+      "wq_evidence_contamination": 2,
+      "wq_evidence_general_purpose": 1,
+      "wq_evidence_non_water": 1
     }
   ]
 }
