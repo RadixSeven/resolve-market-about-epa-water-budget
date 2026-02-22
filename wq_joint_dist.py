@@ -1,26 +1,26 @@
 #!/usr/bin/env python3
-"""Show the joint distribution of water_quality_relevance_certainty and water_quality_relevance."""
+"""Show the joint distribution of water_quality_relevance_certainty and water_quality_relevance for line items."""
 
 import json
 import sys
 from collections import Counter
-
+from collections.abc import Generator
 
 type JsonValue = None | bool | int | float | str | list[JsonValue] | JsonObject
 type JsonObject = dict[str, JsonValue]
 
-def extract_pairs(obj: JsonValue) -> list[tuple[int, str]]:
+def extract_pairs(obj: JsonValue) -> Generator[tuple[int, str], None, None]:
     """Recursively find all (certainty, relevance) pairs in the JSON."""
-    pairs = []
     if isinstance(obj, dict):
-        if "water_quality_relevance_certainty" in obj and "water_quality_relevance" in obj:
-            pairs.append((obj["water_quality_relevance_certainty"], obj["water_quality_relevance"]))
+        if "water_quality_relevance_certainty" in obj and "water_quality_relevance" in obj and "sub_items" not in obj:
+            yield obj["water_quality_relevance_certainty"], obj["water_quality_relevance"]
         for v in obj.values():
-            pairs.extend(extract_pairs(v))
+            yield from extract_pairs(v)
     elif isinstance(obj, list):
         for item in obj:
-            pairs.extend(extract_pairs(item))
-    return pairs
+            yield from extract_pairs(item)
+    return None
+
 
 
 def main() -> None:
@@ -39,7 +39,7 @@ def main() -> None:
 
     print("|Relevance|Certainty|Count|")
     print("|---|---|---|")
-    for (relevance, certainty), count in sorted(counts.items(), key=lambda x: (-x[1], x[0][1], x[0][0])):
+    for (relevance, certainty), count in sorted(counts.items(), key=lambda x: (x[0][0], -x[0][1])):
         print(f"|{relevance:{max_relevance_len}}| {certainty} | {count:2} |")
 
 
