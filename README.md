@@ -2,7 +2,7 @@ This repo records my data for resolving [the prediction marketI created about wa
 
 # Process
 
-# Produce the initial JSON files
+## Produce the initial JSON files
 
 I excerpted files from the EPA appropriations text into `EPA-appropriations-text-FY2024-HR4366.txt`, `EPA-appropriations-text-FY2025-HR1968.html`, and `EPA-appropriations-text-FY2026-HR6938.html`. I had Claude create `EPA-budget-schema.md` based on `EPA-appropriations-text-FY2026-HR6938.html`
 It then created the initial JSON files `epa_fy2025_hr1968_div_a_title_vii.json` and `epa_fy2026_hr6938_div_b_title_ii.json` based on the schema and the text files.
