@@ -134,7 +134,7 @@ def main() -> None:
         if amt_2025 == 0:
             pct_cut: float = 0.0
         else:
-            pct_cut = (amt_2026 - amt_2025) / amt_2025 * 100.0
+            pct_cut = (amt_2025 - amt_2026) / amt_2025 * 100.0
         samples.append((amt_2026, amt_2025, pct_cut))
 
     # Write CSV
@@ -157,7 +157,7 @@ def main() -> None:
     ci_lo: float = pcts_sorted[lo_idx]
     ci_hi: float = pcts_sorted[hi_idx]
 
-    pct_ge_10: float = sum(1 for p in pcts if p <= -10.0) / n * 100.0
+    pct_ge_10: float = sum(1 for p in pcts if p >= 10.0) / n * 100.0
 
     print(f"Samples: {n}")
     print(f"Mean percent change: {mean:.2f}%")
