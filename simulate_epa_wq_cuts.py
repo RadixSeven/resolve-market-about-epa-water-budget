@@ -123,12 +123,35 @@ def sample_certainty(cert_level: int, rng: random.Random) -> float:
 
 
 def sample_year(
-    data: JsonValue, rng: random.Random, reclassify_tables: ReclassifyTables
+    data: JsonValue,
+    rng: random.Random,
+    reclassify_tables: ReclassifyTables,
+    name_to_frac: dict[str, float],
 ) -> float:
-    """Return a single sampled total for water quality programs for one year."""
+    """Return a single sampled total for water quality programs for one year.
+
+    Args:
+        data: The JSON data for the year as dicts
+        rng: The random number generator for sampling
+        reclassify_tables: The precomputed reclassification tables for sampling
+            new classifications when the original is deemed incorrect.
+        name_to_frac: A dict mapping line item names to their sampled fraction
+            of funding allocated to water quality. This ensures that the same
+            program gets the same fraction across different years.
+
+    Returns:
+        A sample from the distribution of total water quality funding for the
+        year represented by `data`.
+    """
     total: float = 0.0
     for leaf in extract_leaf_nodes(data):
         amount: float = leaf["amount"]
+        name: str = leaf["name"]
+
+        if name in name_to_frac:
+            total += name_to_frac[name] * amount
+            continue
+
         relevance: Classification = leaf["water_quality_relevance"]
         cert_level: int = leaf["water_quality_relevance_certainty"]
 
@@ -141,6 +164,8 @@ def sample_year(
             )
 
         frac: float = sample_frac(relevance, rng)
+        name_to_frac[name] = frac
+
         total += frac * amount
 
     return total
@@ -188,12 +213,11 @@ def main() -> None:
 
     samples: list[tuple[float, float, float]] = []
     for _ in range(args.num_samples):
-        amt_2025: float = sample_year(data_2025, rng, reclassify_tables)
-        amt_2026: float = sample_year(data_2026, rng, reclassify_tables)
-        if amt_2025 == 0:
-            pct_cut: float = 0.0
-        else:
-            pct_cut = (amt_2025 - amt_2026) / amt_2025 * 100.0
+        name_to_frac: dict[str, float] = {}
+        amt_2025 = sample_year(data_2025, rng, reclassify_tables, name_to_frac)
+        amt_2026 = sample_year(data_2026, rng, reclassify_tables, name_to_frac)
+        pct_cut = 0 if amt_2025 == 0 else (
+            amt_2025 - amt_2026) / amt_2025 * 100.0
         samples.append((amt_2026, amt_2025, pct_cut))
 
     # Write CSV
