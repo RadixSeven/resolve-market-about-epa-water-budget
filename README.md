@@ -152,3 +152,9 @@ a 1% cut. So, I need to do more work to reduce the uncertainty. The first thing
 to try is to fix the simplistic "flip" for incorrect relevance classifications.
 Since it will no longer be switching 0% to 100% or vice versa, that should
 reduce the variance.
+
+## Add a more realistic model for incorrect classifications
+
+I added `04-dont-use-flip-incorrectness.md` but pasted it into a planning
+session in the same conversation that implemented the simulation to take
+advantage of the context.
