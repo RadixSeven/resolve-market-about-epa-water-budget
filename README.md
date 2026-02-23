@@ -158,3 +158,26 @@ reduce the variance.
 I added `04-dont-use-flip-incorrectness.md` but pasted it into a planning
 session in the same conversation that implemented the simulation to take
 advantage of the context.
+
+The result:
+```bash
+python3 simulate_epa_wq_cuts.py -n 100000
+```
+
+```
+Samples: 100000
+Mean percent change: -0.15%
+Std dev: 23.62%
+97% credible interval: [-60.28%, 40.23%]
+Percent of samples with >= 10% cut: 37.2%
+Results written to epa_cut_samples.csv
+```
+
+This has more variation and a higher percentage of samples with >= 10% cuts.
+
+The next improvement is to fix the low probability of "unknown" being correct.
+It's pretty clear that they are unknown. I'll increase the certainty and mark
+my manual change in the data. I don't expect this to change much, but it is
+an inexpensive step and improves the accuracy of the model.
+
+## Make the "unknown" items more certain
