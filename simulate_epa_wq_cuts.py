@@ -14,9 +14,19 @@ import random
 import sys
 from collections.abc import Generator
 from pathlib import Path
+from typing import NamedTuple
 
 type JsonValue = None | bool | int | float | str | list[JsonValue] | JsonObject
 type JsonObject = dict[str, JsonValue]
+
+type Classification = str
+class CumulativeEntry(NamedTuple):
+    cumulative_count: int
+    classification: Classification
+
+
+type ReclassificationTable = list[CumulativeEntry]
+type ReclassifyTables = dict[Classification, ReclassificationTable]
 
 # ---------------------------------------------------------------------------
 # JSON traversal — duplicated from wq_joint_dist.py so this script is
@@ -34,6 +44,48 @@ def extract_leaf_nodes(obj: JsonValue) -> Generator[JsonObject, None, None]:
     elif isinstance(obj, list):
         for item in obj:
             yield from extract_leaf_nodes(item)
+
+
+def count_relevance_classes(*datasets: JsonValue) -> dict[Classification, int]:
+    """Count occurrences of each water_quality_relevance across all datasets."""
+    counts: dict[Classification, int] = {}
+    for data in datasets:
+        for leaf in extract_leaf_nodes(data):
+            cls: Classification = leaf["water_quality_relevance"]
+            counts[cls] = counts.get(cls, 0) + 1
+    return counts
+
+
+def build_reclassify_tables(counts: dict[Classification, int]) -> ReclassifyTables:
+    """Build a cumulative reclassification table for each classification.
+
+    For each classification, the table contains cumulative counts of all
+    *other* classifications, so we can sample a replacement when the
+    original classification is deemed incorrect.
+    """
+    tables: ReclassifyTables = {}
+    for excluded in counts:
+        table: ReclassificationTable = []
+        cumulative: int = 0
+        for cls, count in counts.items():
+            if cls == excluded:
+                continue
+            cumulative += count
+            table.append(CumulativeEntry(cumulative, cls))
+        tables[excluded] = table
+    return tables
+
+
+def sample_reclassification(
+    table: ReclassificationTable, rng: random.Random
+) -> Classification:
+    """Pick a replacement classification from a cumulative table."""
+    total: int = table[-1].cumulative_count
+    pick: int = rng.randint(0, total - 1)
+    for entry in table:
+        if pick < entry.cumulative_count:
+            return entry.classification
+    return table[-1].classification  # unreachable, satisfies type checker
 
 
 # ---------------------------------------------------------------------------
@@ -70,22 +122,26 @@ def sample_certainty(cert_level: int, rng: random.Random) -> float:
         raise ValueError(f"Unexpected certainty level: {cert_level!r}")
 
 
-def sample_year(data: JsonValue, rng: random.Random) -> float:
+def sample_year(
+    data: JsonValue, rng: random.Random, reclassify_tables: ReclassifyTables
+) -> float:
     """Return a single sampled total for water quality programs for one year."""
     total: float = 0.0
     for leaf in extract_leaf_nodes(data):
         amount: float = leaf["amount"]
-        relevance: str = leaf["water_quality_relevance"]
+        relevance: Classification = leaf["water_quality_relevance"]
         cert_level: int = leaf["water_quality_relevance_certainty"]
 
-        frac: float = sample_frac(relevance, rng)
         certainty: float = sample_certainty(cert_level, rng)
         correctness: float = rng.random()
 
-        if correctness < certainty:
-            total += frac * amount
-        else:
-            total += (1 - frac) * amount
+        if correctness >= certainty:
+            relevance = sample_reclassification(
+                reclassify_tables[relevance], rng
+            )
+
+        frac: float = sample_frac(relevance, rng)
+        total += frac * amount
 
     return total
 
@@ -125,12 +181,15 @@ def main() -> None:
     with open(base / "epa_fy2026_hr6938_div_b_title_ii.json") as f:
         data_2026: JsonValue = json.load(f)
 
+    counts: dict[Classification, int] = count_relevance_classes(data_2025, data_2026)
+    reclassify_tables: ReclassifyTables = build_reclassify_tables(counts)
+
     rng: random.Random = random.Random(args.seed)
 
     samples: list[tuple[float, float, float]] = []
     for _ in range(args.num_samples):
-        amt_2025: float = sample_year(data_2025, rng)
-        amt_2026: float = sample_year(data_2026, rng)
+        amt_2025: float = sample_year(data_2025, rng, reclassify_tables)
+        amt_2026: float = sample_year(data_2026, rng, reclassify_tables)
         if amt_2025 == 0:
             pct_cut: float = 0.0
         else:
