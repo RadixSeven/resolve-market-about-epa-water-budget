@@ -181,3 +181,19 @@ my manual change in the data. I don't expect this to change much, but it is
 an inexpensive step and improves the accuracy of the model.
 
 ## Make the "unknown" items more certain
+
+I marked all the "unknown" items as certainty 5.
+
+After running the simulation again, I got:
+
+```
+Samples: 100000
+Mean percent change: -0.06%
+Std dev: 23.61%
+97% credible interval: [-59.75%, 40.24%]
+Percent of samples with >= 10% cut: 37.3%
+Results written to epa_cut_samples.csv
+```
+
+So, now an even higher percentage of samples show >= 10% cuts, but the CI is
+smaller.
