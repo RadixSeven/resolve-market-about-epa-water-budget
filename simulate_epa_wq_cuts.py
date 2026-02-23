@@ -219,9 +219,9 @@ def main() -> None:
     pct_ge_10: float = sum(1 for p in pcts if p >= 10.0) / n * 100.0
 
     print(f"Samples: {n}")
-    print(f"Mean percent change: {mean:.2f}%")
+    print(f"Mean percent cut: {mean:.2f}%")
     print(f"Std dev: {std:.2f}%")
-    print(f"97% credible interval: [{ci_lo:.2f}%, {ci_hi:.2f}%]")
+    print(f"97% credible interval for cut: [{ci_lo:.2f}%, {ci_hi:.2f}%]")
     print(f"Percent of samples with >= 10% cut: {pct_ge_10:.1f}%")
     print(f"Results written to {args.output}")
 
