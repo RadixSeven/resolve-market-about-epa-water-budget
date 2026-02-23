@@ -869,9 +869,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(20) Long Island Sound grants (FWPCA 124)",
+          "name": "Long Island Sound grants (FWPCA section 124)",
+          "notes": [
+            "Originally titled: \"(20) Long Island Sound grants (FWPCA 124)\" - renamed to match the FY2025 version"
+          ],
           "amount": 3500000,
-          "statutory_reference": "33 U.S.C. 1276",
+          "statutory_reference": "Federal Water Pollution Control Act, section 124 (33 U.S.C. 1276)",
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
