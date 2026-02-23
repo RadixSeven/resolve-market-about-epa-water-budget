@@ -197,3 +197,44 @@ Results written to epa_cut_samples.csv
 
 So, now an even higher percentage of samples show >= 10% cuts, but the CI is
 smaller.
+
+## Identically-named branches
+
+I asked Claude Code:
+
+> How many line items (those without members in "sub_items") are the same 
+> between @epa_fy2025_hr1968_div_a_title_vii.json and
+> @epa_fy2026_hr6938_div_b_title_ii.json - I want to
+> know whether it is worth making sure their fraction assigned to water
+> quality programs are the same for both years rather than choosing
+> the fraction independently.
+
+Claude responded with `2025-2026_matching_leaves.txt` and the following summary:
+
+> Key finding: 33 of 34 already have identical WQ evidence scores
+>
+> The only difference is Long Island Sound — FY2025 has infra=3, 
+> monitoring=3 while FY2026 has infra=2, monitoring=4. 
+> Both still have the same relevance category ("for water quality programs")
+> and certainty (5).
+>
+> Items that are leaves in one file but not the other (6 cases)
+>
+> These are the structural mismatches where a program is a leaf in one year but subdivided in the other:
+>
+>  - S&T: Research National Priorities — leaf in FY2025, split into CDS + remainder in FY2026
+>  - STAG: CW SRF — leaf in FY2025, split into CPF/CDS + formula in FY2026
+>  - STAG: DW SRF — leaf in FY2025, split into CPF/CDS + formula in FY2026
+>  - STAG: Categorical/multi-media grants — leaf in FY2025, split into 5 sub-items in FY2026
+>  - STAG: CDS items — $0 in FY2025 (zeroed), $20,364,000 as item (16) in FY2026
+>  - STAG: Prior-year rescission — FY2025 only
+>
+> And FY2026 has 4 items with no FY2025 counterpart: Energy Star, Grants (impl/training), Above-ground leaking fuel tank, Lake Pontchartrain.
+>
+> Bottom line
+>
+> It is absolutely worth enforcing the same water quality fraction for both years on matching leaves —
+> the evidence scores are already virtually identical (33/34), confirming these are the same
+> programs. You'd just need to reconcile the one Long Island Sound discrepancy and handle the 6
+> structural mismatches where granularity differs.
+

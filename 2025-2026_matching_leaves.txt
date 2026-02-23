@@ -1,0 +1,207 @@
+ Matching leaves (34 of 40 FY2025 leaves / 50 FY2026 leaves)
+
+  #: 1
+  Line Item: S&T: Unallocated/general
+  FY2025 Amount: $738,573,000
+  FY2026 Amount: $716,942,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 2
+  Line Item: EPM: Env Protection National Priorities
+  FY2025 Amount: $30,700,000
+  FY2026 Amount: $30,700,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 3
+  Line Item: EPM: Geographic Programs
+  FY2025 Amount: $681,726,000
+  FY2026 Amount: $690,202,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 4
+  Line Item: EPM: Alaska Native contaminated lands
+  FY2025 Amount: $20,000,000
+  FY2026 Amount: $20,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 5
+  Line Item: EPM: Unallocated/general
+  FY2025 Amount: $2,462,602,000
+  FY2026 Amount: $2,310,745,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 6
+  Line Item: EPM: TSCA Service Fee Fund
+  FY2025 Amount: $9,000,000
+  FY2026 Amount: $9,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 7
+  Line Item: Office of Inspector General
+  FY2025 Amount: $43,250,000
+  FY2026 Amount: $43,250,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 8
+  Line Item: Buildings and Facilities
+  FY2025 Amount: $40,676,000
+  FY2026 Amount: $40,676,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 9
+  Line Item: Superfund: Transfer to OIG
+  FY2025 Amount: $11,328,000
+  FY2026 Amount: $11,328,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 10
+  Line Item: Superfund: Transfer to S&T
+  FY2025 Amount: $30,343,000
+  FY2026 Amount: $17,607,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 11
+  Line Item: Superfund: Unallocated/general
+  FY2025 Amount: $496,029,000
+  FY2026 Amount: $253,814,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 12
+  Line Item: LUST: SWDA 9003(h)
+  FY2025 Amount: $64,723,000
+  FY2026 Amount: $64,583,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 13
+  Line Item: LUST: Other SWDA per IRC 9508(c)
+  FY2025 Amount: $24,491,000
+  FY2026 Amount: $24,320,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 14
+  Line Item: Inland Oil Spill Programs
+  FY2025 Amount: $20,711,000
+  FY2026 Amount: $20,561,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 15
+  Line Item: STAG: US-Mexico Border
+  FY2025 Amount: $35,000,000
+  FY2026 Amount: $35,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 16
+  Line Item: STAG: Alaska rural/Native Village
+  FY2025 Amount: $39,000,000
+  FY2026 Amount: $39,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 17
+  Line Item: STAG: Brownfields
+  FY2025 Amount: $98,000,000
+  FY2026 Amount: $98,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 18
+  Line Item: STAG: Diesel emissions
+  FY2025 Amount: $90,000,000
+  FY2026 Amount: $90,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 19
+  Line Item: STAG: Targeted airshed
+  FY2025 Amount: $67,800,000
+  FY2026 Amount: $67,800,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 20
+  Line Item: STAG: SDWA 1459A(a)-(j)
+  FY2025 Amount: $28,500,000
+  FY2026 Amount: $28,500,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 21
+  Line Item: STAG: Lead testing schools
+  FY2025 Amount: $28,000,000
+  FY2026 Amount: $28,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 22
+  Line Item: STAG: Lead service line
+  FY2025 Amount: $22,000,000
+  FY2026 Amount: $22,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 23
+  Line Item: STAG: SDWA 1459A(l)
+  FY2025 Amount: $6,500,000
+  FY2026 Amount: $6,500,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 24
+  Line Item: STAG: Sewer overflow/stormwater
+  FY2025 Amount: $25,500,000
+  FY2026 Amount: $25,500,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 25
+  Line Item: STAG: FWPCA 221 grants
+  FY2025 Amount: $41,000,000
+  FY2026 Amount: $41,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 26
+  Line Item: STAG: AWIA 4304(b)
+  FY2025 Amount: $5,400,000
+  FY2026 Amount: $5,400,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 27
+  Line Item: STAG: Save Our Seas 302(a)
+  FY2025 Amount: $5,000,000
+  FY2026 Amount: $3,500,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 28
+  Line Item: STAG: Wildfire smoke
+  FY2025 Amount: $7,000,000
+  FY2026 Amount: $8,500,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 29
+  Line Item: STAG: SDWA 1459F
+  FY2025 Amount: $2,250,000
+  FY2026 Amount: $2,250,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 30
+  Line Item: STAG: AWIA 2001
+  FY2025 Amount: $4,000,000
+  FY2026 Amount: $4,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 31
+  Line Item: STAG: Stormwater infrastructure
+  FY2025 Amount: $2,000,000
+  FY2026 Amount: $2,000,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 32
+  Line Item: STAG: Long Island Sound
+  FY2025 Amount: $3,500,000
+  FY2026 Amount: $3,500,000
+  WQ Scores Identical?: No
+  ────────────────────────────────────────
+  #: 33
+  Line Item: WIFIA: Cost of direct loans
+  FY2025 Amount: $64,634,000
+  FY2026 Amount: $64,634,000
+  WQ Scores Identical?: Yes
+  ────────────────────────────────────────
+  #: 34
+  Line Item: WIFIA: Admin expenses
+  FY2025 Amount: $7,640,000
+  FY2026 Amount: $7,640,000
+  WQ Scores Identical?: Yes
+
+  Key finding: 33 of 34 already have identical WQ evidence scores
