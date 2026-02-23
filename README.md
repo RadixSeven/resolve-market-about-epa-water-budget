@@ -309,3 +309,25 @@ I suspect that it is the earmarks. (They are the "unknown" items. They go
 from 0 to 100% uniformly and so are consistent with the mostly symmetric
 credible interval.) But it will be a lot of work to incorporate
 them, so I want to be sure before I put in that effort.
+
+## Which line items contribute the most to the variance?
+
+Claude Code added an uncertainty contribution calculation to the simulation
+after the following prompt:
+
+> How can we modify @simulate_epa_wq_cuts.py to give a separate report that
+> tells which line items contribute the most to the uncertainty?
+
+The result puts 90.6% of the variance in two line items:
+
+| name                                                                   | amount_2025 | amount_2026 | net_amount    | relevance                            | certainty | mean_frac          | std_frac            | var_contribution       | std_contribution  | pct_of_total_var   |
+|------------------------------------------------------------------------|-------------|-------------|---------------|--------------------------------------|-----------|--------------------|---------------------|------------------------|-------------------|--------------------|
+| Categorical/multi-media grants to States and tribes                    | 1106333000  | 0.0         | 1106333000.0  | partially for water quality programs | 3         | 0.4869168247092677 | 0.3354019115431709  | 1.3769012701127947e+17 | 371066203.0032909 | 48.422402260601125 |
+| State/tribal multi-media and single media grants (general/unallocated) | 0.0         | 1034096000  | -1034096000.0 | partially for water quality programs | 3         | 0.4850134445069255 | 0.33475200576506625 | 1.1983069888616832e+17 | 346165710.1536319 | 42.14165845136938  |
+
+Each of these is about a billion dollars and only exists in one year. Both are
+classified as `partially for water quality programs`. They are big grab-bag
+items. So, the next step seems to be to get more information about them to try
+to classify them more accurately. The names look like they are really the same
+program. If they really are, then enforcing the same fraction for both years
+should reduce the variance significantly.
