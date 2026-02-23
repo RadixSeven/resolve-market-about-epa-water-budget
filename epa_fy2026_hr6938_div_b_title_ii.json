@@ -879,7 +879,7 @@
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
           "wq_evidence_authorizing_statute": 5,
-          "wq_evidence_infrastructure": 2,
+          "wq_evidence_infrastructure": 3,
           "wq_evidence_monitoring": 4,
           "wq_evidence_contamination": 3,
           "wq_evidence_general_purpose": 1,
