@@ -17,18 +17,23 @@ To review the main sampling loop is:
 ```
 
 Each loop generates a tuple: amt_2026, amt_2025, pct_cut. If in one run of
-sample_year, a line item named `name` is given a given fraction of the budget
-allocated to water quality programs (`frac`) then, when the other year attempts
-to sample a line item with the same name, it should be given the same fraction
-but multiplied by that year's amound. For example, suppose that in 2025, there
-is a line item named "Clean Water Act grants" and 80% of its funding is
-allocated to water quality programs. If its "amount" is $100, then it would add
-$80 to the total for water quality programs. If 2026 contains a line item named
-"Clean Water Act grants" should also have 80% of its funding allocated to water
-quality programs. If its amount is $200, then it would add $160 to the total for
-water quality programs in 2026. This way, the fraction of funding for water
-quality programs remains consistent for items with the same name across
-different years.
+sample_year, a line item with a given `name` (i.e. `leaf["name"]`) is assigned a
+fraction `frac` of its amount to water quality programs, then when the other
+year's call to sample_year encounters a line item with the same name, it should
+reuse that same fraction rather than sampling a new one. Inside sample_year, the
+logic should be: if `name` is already in `name_to_frac`, use the stored
+fraction; otherwise, sample a new fraction (via `sample_frac` and the certainty
+calculation as currently implemented) and store it in `name_to_frac` before
+using it.
+
+For example, suppose that in 2025 there is a line item named "Clean Water Act
+grants" and 80% of its funding is allocated to water quality programs. If its
+amount is \$100, then it would add \$80 to the total for water quality programs.
+If 2026 contains a line item also named "Clean Water Act grants", it should also
+have 80% of its funding allocated to water quality programs. If its amount is
+\$200, then it would add \$160 to the total for water quality programs in 2026.
+This way, the fraction of funding for water quality programs remains consistent
+for items with the same name across different years.
 
 A simple implementation would be to maintain a dictionary that maps line item
 names to their fractions:
