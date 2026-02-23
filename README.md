@@ -200,9 +200,11 @@ smaller.
 
 ## Identically-named branches
 
+### Harmonize names
+
 I asked Claude Code:
 
-> How many line items (those without members in "sub_items") are the same 
+> How many line items (those without members in "sub_items") are the same
 > between @epa_fy2025_hr1968_div_a_title_vii.json and
 > @epa_fy2026_hr6938_div_b_title_ii.json - I want to
 > know whether it is worth making sure their fraction assigned to water
@@ -213,8 +215,8 @@ Claude responded with `2025-2026_matching_leaves.txt` and the following summary:
 
 > Key finding: 33 of 34 already have identical WQ evidence scores
 >
-> The only difference is Long Island Sound — FY2025 has infra=3, 
-> monitoring=3 while FY2026 has infra=2, monitoring=4. 
+> The only difference is Long Island Sound — FY2025 has infra=3,
+> monitoring=3 while FY2026 has infra=2, monitoring=4.
 > Both still have the same relevance category ("for water quality programs")
 > and certainty (5).
 >
@@ -238,3 +240,42 @@ Claude responded with `2025-2026_matching_leaves.txt` and the following summary:
 > programs. You'd just need to reconcile the one Long Island Sound discrepancy and handle the 6
 > structural mismatches where granularity differs.
 
+After fixing the one discrepancy, I asked Claude Code
+
+> I harmonized the evidence scores for Long Island Sound. Please ensure that
+> the names for the matching line items are character-for-character identical
+> between the two years. When you modify a file to do this, add a note to the
+> "notes" array (or add a new notes array if the item didn't have one before)
+> recording the original name. Follow the pattern in the 2026
+> "Long Island Sound grants (FWPCA section 124)" line item. Choose the more
+> informative name or if both are the same, the one that seems easier to
+> understand for a layperson, if neither is easier, choose the one that comes
+> first when sorted lexically.
+
+Claude did this, leaving the following summary:
+
+> All 34 matching leaf items now have character-for-character identical names
+> across both files. The JSON is valid in both files.
+>
+> Summary of changes made:
+>
+> - 3 edits to FY2025 (adopted FY2026's more informative names):
+>
+>    - "Unallocated/general" (under S&T) → "Science and Technology (general/unallocated)"
+>    - "Unallocated/general" (under EPM) → "Environmental Programs and Management (general/unallocated)"
+>    - "Unallocated/general (CERCLA response activities)" → "Superfund cleanup and response activities (remainder)"
+> - 19 edits to FY2026 (adopted FY2025's more descriptive names, stripping bill-specific (N) prefixes):
+>    - "Alaska Native contamination cleanup grants" → "Alaska Native contaminated lands grants"
+>    - "LUST cleanup activities under SWDA section 9003(h)" → "Leaking underground storage tank cleanup (SWDA section 9003(h))"
+>  - 17 STAG sub-items stripped of (N) prefixes and adopted FY2025's more descriptive names (e.g., "(7) SDWA 1459A(a)-(j) grants..." → "Small and disadvantaged community drinking water assistance (SDWA section 1459A(a)-(j))")
+>
+> Every renamed item has an "Originally named: ..." note recording its
+> original name, following the Long Island Sound pattern.
+>
+> The 6 FY2025-only and 16 FY2026-only leaves are items that exist in only one
+> year or have different structural granularity (leaf vs. parent), so no name
+> harmonization was needed.
+
+I'll deal with the different granularity items later if this is 
+not enough to reduce the uncertainty. But the next step is to enforce the
+same water quality funding fraction for all 34 of the matching leaves.
