@@ -126,3 +126,29 @@ will be a lot of work to incorporate (and to find the FY2025 earmarks data).
 
 I want to see how certain the conclusions are given the current data before
 I try to get more certainty.
+
+## Try the first Monte Carlo simulation
+I added `03-simulate-epa-water-budget-allocations-to-assess-cuts.md` to ask Claude to write a Monte Carlo simulation based on the current data.
+
+```bash
+python3 simulate_epa_wq_cuts.py -n 100000
+```
+
+Yields:
+```
+Samples: 100000
+Mean percent change: 0.96%
+Std dev: 17.75%
+97% credible interval: [-42.94%, 32.91%]
+Percent of samples with >= 10% cut: 32.9%
+Results written to epa_cut_samples.csv
+```
+
+This looks like ![Plot of cut percentages with a long tail to the not-cut side](epa_cut_samples_distribution_100000.png). (This was a plot generated
+by Claude based on the `epa_cut_samples.csv` output from the above simulation.)
+
+Unfortunately, 33% of the samples show a cut of 10% or more. And the mean is
+a 1% cut. So, I need to do more work to reduce the uncertainty. The first thing
+to try is to fix the simplistic "flip" for incorrect relevance classifications.
+Since it will no longer be switching 0% to 100% or vice versa, that should
+reduce the variance.
