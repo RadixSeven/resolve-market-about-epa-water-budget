@@ -276,7 +276,7 @@ Claude did this, leaving the following summary:
 > year or have different structural granularity (leaf vs. parent), so no name
 > harmonization was needed.
 
-I'll deal with the different granularity items later if this is 
+I'll deal with the different granularity items later if this is
 not enough to reduce the uncertainty. But the next step is to enforce the
 same water quality funding fraction for all 34 of the matching leaves.
 
@@ -331,3 +331,24 @@ items. So, the next step seems to be to get more information about them to try
 to classify them more accurately. The names look like they are really the same
 program. If they really are, then enforcing the same fraction for both years
 should reduce the variance significantly.
+
+## Investigate whether the two line items with the biggest variance are the same
+
+I wrote the following prompt to Claude Code:
+
+> @epa_fy2025_hr1968_div_a_title_vii.json has a line item
+> "Categorical/multi-media grants to States and tribes" that is not in FY2026
+> and @epa_fy2025_hr1968_div_a_title_vii.json has a line item
+> "State/tribal multi-media and single media grants (general/unallocated)" that
+> is not in FY2025. Could you look in the original bill documents (
+> @EPA-appropriations-text-FY2024-HR4366.txt
+> @EPA-appropriations-text-FY2025-HR1968.html
+> @EPA-appropriations-text-FY2026-HR6938.html
+> @EPA-congressional-record-2026-01-08-earmarks.txt
+> @EPA-congressional-record-2026-01-08-title-ii.txt )
+> to discover whether they are the same. Write the evidence for and against
+> their being the same program with a slightly different name and a different
+> funding allocation in both years at the bottom of @README.md. If they are the
+> same, then rename the FY2025 one in the JSON file leaving a note (as was done
+> with the Long Island Sound grants line item). The new name should be the
+> character-by-character identical to the FY2026 name.
