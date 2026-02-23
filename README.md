@@ -279,3 +279,33 @@ Claude did this, leaving the following summary:
 I'll deal with the different granularity items later if this is 
 not enough to reduce the uncertainty. But the next step is to enforce the
 same water quality funding fraction for all 34 of the matching leaves.
+
+### Use stable values
+
+I wrote `05-same-water-quality-program-fraction-for-same-name.md` and then
+had Claude Code implement it. Now identically named line items have the same
+fraction of their funding allocated to water quality programs in both years,
+which should reduce the variance in the simulation results.
+
+When I ran the new simulation, I got:
+
+```
+Samples: 100000
+Mean percent cut: 2.14%
+Std dev: 9.44%
+97% credible interval for cut: [-19.81%, 19.69%]
+Percent of samples with >= 10% cut: 20.8%
+Results written to epa_cut_samples.csv
+```
+
+This has a much lower standard deviation, and 20.8% of samples have >= 10% cuts,
+which is significantly lower than the 37.3% from before.
+
+### Next steps
+
+The next step is to look at which line items are contributing the most to the
+variance in the results and see if I can reduce the uncertainty for those items.
+I suspect that it is the earmarks. (They are the "unknown" items. They go
+from 0 to 100% uniformly and so are consistent with the mostly symmetric
+credible interval.) But it will be a lot of work to incorporate
+them, so I want to be sure before I put in that effort.
