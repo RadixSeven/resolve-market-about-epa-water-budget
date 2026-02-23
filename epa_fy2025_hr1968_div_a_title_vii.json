@@ -747,12 +747,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "Categorical/multi-media grants to States and tribes",
+          "name": "(23) State/tribal multi-media and single media grants",
           "amount": 1106333000,
           "notes": [
             "Grants to States, federally recognized tribes, interstate agencies, tribal consortia, and air pollution control agencies for pollution prevention, control, and abatement.",
-            "Of which: $46,250,000 for CERCLA section 128 (State response programs); $9,500,000 for Environmental Information Exchange Network grants; $1,475,000 for SWDA section 2007(f)(2) State grants (in addition to LUST funds); $18,512,000 of section 106 (FWPCA) grants for State water resources surveys and monitoring enhancements.",
-            "Also includes grants under P.L. 104-134, Clean Air Act section 103 (PM monitoring), and SWDA section 2301 (coal combustion residuals)."
+            "Also includes grants under P.L. 104-134, Clean Air Act section 103 (PM monitoring), and SWDA section 2301 (coal combustion residuals).",
+            "Originally named: \"Categorical/multi-media grants to States and tribes\" — restructured into sub-items to match FY2026 structure. The four within-amounts are explicitly specified in the FY2024 appropriations text (paragraph 21) carried forward by the CR."
           ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 3,
@@ -762,7 +762,87 @@
           "wq_evidence_monitoring": 2,
           "wq_evidence_contamination": 1,
           "wq_evidence_general_purpose": 5,
-          "wq_evidence_non_water": 2
+          "wq_evidence_non_water": 2,
+          "sub_items": [
+            {
+              "name": "CERCLA section 128 (State and Tribal response programs)",
+              "amount": 46250000,
+              "statutory_reference": "CERCLA section 128",
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 1,
+              "wq_evidence_contamination": 3,
+              "wq_evidence_general_purpose": 2,
+              "wq_evidence_non_water": 3
+            },
+            {
+              "name": "Environmental Information Exchange Network grants",
+              "amount": 9500000,
+              "notes": [
+                "Including associated program support costs."
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 1,
+              "wq_evidence_general_purpose": 5,
+              "wq_evidence_non_water": 1
+            },
+            {
+              "name": "State UST grants (SWDA 2007(f)(2))",
+              "amount": 1475000,
+              "statutory_reference": "Solid Waste Disposal Act section 2007(f)(2)",
+              "notes": [
+                "In addition to funds under LUST Trust Fund Program heading for SWDA provisions per IRC 9508(c) other than 9003(h)."
+              ],
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 4,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 2
+            },
+            {
+              "name": "State water resources statistical surveys (FWPCA 106)",
+              "amount": 18512000,
+              "statutory_reference": "Federal Water Pollution Control Act section 106",
+              "notes": [
+                "For State participation in national- and State-level statistical surveys of water resources and enhancements to State monitoring programs.",
+                "From funds available for grants under FWPCA section 106."
+              ],
+              "water_quality_relevance": "for water quality programs",
+              "water_quality_relevance_certainty": 5,
+              "wq_evidence_name_reference": 5,
+              "wq_evidence_authorizing_statute": 5,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 5,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 1
+            },
+            {
+              "name": "State/tribal multi-media and single media grants (general/unallocated)",
+              "amount": 1030596000,
+              "water_quality_relevance": "partially for water quality programs",
+              "water_quality_relevance_certainty": 3,
+              "wq_evidence_name_reference": 1,
+              "wq_evidence_authorizing_statute": 1,
+              "wq_evidence_infrastructure": 1,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 1,
+              "wq_evidence_general_purpose": 5,
+              "wq_evidence_non_water": 2
+            }
+          ]
         },
         {
           "name": "Prior-year rescission offset",

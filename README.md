@@ -352,3 +352,31 @@ I wrote the following prompt to Claude Code:
 > same, then rename the FY2025 one in the JSON file leaving a note (as was done
 > with the Long Island Sound grants line item). The new name should be the
 > character-by-character identical to the FY2026 name.
+
+The text in the sections down to `#### Resolution` was written by Claude Code,
+which also modified the JSON files as the text states.
+
+### Evidence: Are these the same program?
+
+**FY2025 leaf**: "Categorical/multi-media grants to States and tribes" — $1,106,333,000
+**FY2026 parent**: "(23) State/tribal multi-media and single media grants" — $1,109,833,000, with 5 sub-items including "State/tribal multi-media and single media grants (general/unallocated)" at $1,034,096,000
+
+#### Evidence FOR being the same program
+
+1. **Identical statutory language.** FY2024 paragraph (21) (carried forward to FY2025 by the CR) and FY2026 paragraph (23) use word-for-word identical appropriations language: "$X shall be for grants, including associated program support costs, to States, federally recognized tribes, interstate agencies, tribal consortia, and air pollution control agencies for multi-media or single media pollution prevention, control and abatement, and related activities..."
+2. **Identical within-amounts.** Both years specify the same four earmarks within the total at identical dollar amounts: $46,250,000 for CERCLA section 128; $9,500,000 for Environmental Information Exchange Network; $1,475,000 for SWDA section 2007(f)(2); $18,512,000 for FWPCA section 106 water resources surveys.
+3. **Same statutory authorities.** Both cite P.L. 104-134, Clean Air Act section 103 (PM monitoring), and SWDA section 2301 (coal combustion residuals).
+4. **Congressional Record confirmation.** The FY2026 explanatory statement (EPA-congressional-record-2026-01-08-title-ii.txt, line 587) says "The bill provides $1,109,833,000 for Categorical Grants", confirming this is the same "Categorical Grants" program.
+5. **Similar amounts.** $1,106,333,000 (FY2025) vs. $1,109,833,000 (FY2026) — a $3,500,000 (0.3%) increase, consistent with a continuing program.
+
+#### Evidence AGAINST being the same program
+
+None. There is no evidence that these are different programs.
+
+#### Structural difference
+
+The FY2025 JSON has the entire $1,106,333,000 as a single leaf. The FY2026 JSON breaks the $1,109,833,000 into 5 sub-items (the 4 specific earmarks plus a $1,034,096,000 general/unallocated remainder). This means the FY2025 leaf is the counterpart of the FY2026 **parent**, not the FY2026 "general/unallocated" sub-item.
+
+#### Resolution
+
+Since the FY2024 appropriations text explicitly specifies the same four within-amounts, the FY2025 JSON was restructured to match FY2026: renamed to "(23) State/tribal multi-media and single media grants" and broken into the same 5 sub-items with the four specific earmarks and a general/unallocated remainder ($1,030,596,000 = $1,106,333,000 - $46,250,000 - $9,500,000 - $1,475,000 - $18,512,000). This makes the 5 sub-items directly comparable across years, allowing the simulation to enforce the same water quality fraction for matching leaves.
