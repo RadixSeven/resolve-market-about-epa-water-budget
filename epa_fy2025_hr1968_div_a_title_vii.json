@@ -36,7 +36,7 @@
             "FY2024 included $2,030,000 within this amount for Community Project Funding/CDS items. Sec. 1801(7) substitutes '$0' for '$2,030,000', zeroing out CDS earmarks."
           ],
           "water_quality_relevance": "unknown",
-          "water_quality_relevance_certainty": 2,
+          "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 1,
           "wq_evidence_authorizing_statute": 1,
           "wq_evidence_infrastructure": 1,
@@ -675,7 +675,7 @@
             "FY2024 level was $38,693,000 for CDS items specified in the FY2024 explanatory statement. Sec. 1801(8) substitutes '$0' for '$38,693,000', completely eliminating this line item. This accounts for the entire $38,693,000 reduction from the FY2024 STAG total."
           ],
           "water_quality_relevance": "unknown",
-          "water_quality_relevance_certainty": 1,
+          "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 1,
           "wq_evidence_authorizing_statute": 1,
           "wq_evidence_infrastructure": 1,
@@ -769,7 +769,7 @@
             "Under a CR, this one-time rescission from FY2024 does not repeat, but the FY2025 total ($4,380,245,000 = FY2024 $4,418,938,000 minus zeroed item 16 $38,693,000) inherits the same structural discrepancy."
           ],
           "water_quality_relevance": "unknown",
-          "water_quality_relevance_certainty": 1,
+          "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 1,
           "wq_evidence_authorizing_statute": 1,
           "wq_evidence_infrastructure": 1,
