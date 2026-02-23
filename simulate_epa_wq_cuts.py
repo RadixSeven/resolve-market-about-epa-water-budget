@@ -25,6 +25,13 @@ class CumulativeEntry(NamedTuple):
     classification: Classification
 
 
+class ItemInfo(NamedTuple):
+    amount_2025: float
+    amount_2026: float
+    relevance: str
+    certainty: int
+
+
 type ReclassificationTable = list[CumulativeEntry]
 type ReclassifyTables = dict[Classification, ReclassificationTable]
 
@@ -172,6 +179,90 @@ def sample_year(
 
 
 # ---------------------------------------------------------------------------
+# Uncertainty report
+# ---------------------------------------------------------------------------
+
+def build_item_info(data_2025: JsonValue, data_2026: JsonValue) -> dict[str, ItemInfo]:
+    """Build a mapping of item name to metadata from both years' JSON trees."""
+    amounts_2025: dict[str, float] = {}
+    relevance_2025: dict[str, str] = {}
+    certainty_2025: dict[str, int] = {}
+    for leaf in extract_leaf_nodes(data_2025):
+        name: str = leaf["name"]
+        amounts_2025[name] = leaf["amount"]
+        relevance_2025[name] = leaf["water_quality_relevance"]
+        certainty_2025[name] = leaf["water_quality_relevance_certainty"]
+
+    amounts_2026: dict[str, float] = {}
+    relevance_2026: dict[str, str] = {}
+    certainty_2026: dict[str, int] = {}
+    for leaf in extract_leaf_nodes(data_2026):
+        name = leaf["name"]
+        amounts_2026[name] = leaf["amount"]
+        relevance_2026[name] = leaf["water_quality_relevance"]
+        certainty_2026[name] = leaf["water_quality_relevance_certainty"]
+
+    all_names = set(amounts_2025) | set(amounts_2026)
+    info: dict[str, ItemInfo] = {}
+    for name in all_names:
+        info[name] = ItemInfo(
+            amount_2025=amounts_2025.get(name, 0.0),
+            amount_2026=amounts_2026.get(name, 0.0),
+            relevance=relevance_2025.get(name, relevance_2026.get(name, "unknown")),
+            certainty=certainty_2025.get(name, certainty_2026.get(name, 0)),
+        )
+    return info
+
+
+def write_uncertainty_report(
+    path: str,
+    item_info: dict[str, ItemInfo],
+    frac_samples: dict[str, list[float]],
+) -> None:
+    """Write a CSV ranking items by their contribution to overall variance."""
+    rows: list[dict[str, object]] = []
+    for name, info in item_info.items():
+        fracs = frac_samples[name]
+        n = len(fracs)
+        mean_frac = sum(fracs) / n
+        var_frac = sum((f - mean_frac) ** 2 for f in fracs) / (n - 1) if n > 1 else 0.0
+        std_frac = math.sqrt(var_frac)
+        net_amount = info.amount_2025 - info.amount_2026
+        var_contribution = var_frac * net_amount ** 2
+        std_contribution = math.sqrt(var_contribution)
+        rows.append({
+            "name": name,
+            "amount_2025": info.amount_2025,
+            "amount_2026": info.amount_2026,
+            "net_amount": net_amount,
+            "relevance": info.relevance,
+            "certainty": info.certainty,
+            "mean_frac": mean_frac,
+            "std_frac": std_frac,
+            "var_contribution": var_contribution,
+            "std_contribution": std_contribution,
+        })
+
+    total_var = sum(r["var_contribution"] for r in rows)
+    for r in rows:
+        r["pct_of_total_var"] = (
+            r["var_contribution"] / total_var * 100.0 if total_var > 0 else 0.0
+        )
+
+    rows.sort(key=lambda r: r["var_contribution"], reverse=True)
+
+    fieldnames = [
+        "name", "amount_2025", "amount_2026", "net_amount",
+        "relevance", "certainty", "mean_frac", "std_frac",
+        "var_contribution", "std_contribution", "pct_of_total_var",
+    ]
+    with open(path, "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+# ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
 
@@ -197,6 +288,12 @@ def main() -> None:
         default="epa_cut_samples.csv",
         help="Output CSV file path (default: epa_cut_samples.csv)",
     )
+    parser.add_argument(
+        "--uncertainty-report",
+        type=str,
+        default="uncertainty_report.csv",
+        help="Output CSV file path for uncertainty contribution report (default: uncertainty_report.csv)",
+    )
     args: argparse.Namespace = parser.parse_args()
 
     base: Path = Path(__file__).resolve().parent
@@ -206,11 +303,14 @@ def main() -> None:
     with open(base / "epa_fy2026_hr6938_div_b_title_ii.json") as f:
         data_2026: JsonValue = json.load(f)
 
+    item_info: dict[str, ItemInfo] = build_item_info(data_2025, data_2026)
+
     counts: dict[Classification, int] = count_relevance_classes(data_2025, data_2026)
     reclassify_tables: ReclassifyTables = build_reclassify_tables(counts)
 
     rng: random.Random = random.Random(args.seed)
 
+    frac_samples: dict[str, list[float]] = {name: [] for name in item_info}
     samples: list[tuple[float, float, float]] = []
     for _ in range(args.num_samples):
         name_to_frac: dict[str, float] = {}
@@ -219,6 +319,8 @@ def main() -> None:
         pct_cut = 0 if amt_2025 == 0 else (
             amt_2025 - amt_2026) / amt_2025 * 100.0
         samples.append((amt_2026, amt_2025, pct_cut))
+        for name in item_info:
+            frac_samples[name].append(name_to_frac[name])
 
     # Write CSV
     with open(args.output, "w", newline="") as f:
@@ -248,6 +350,9 @@ def main() -> None:
     print(f"97% credible interval for cut: [{ci_lo:.2f}%, {ci_hi:.2f}%]")
     print(f"Percent of samples with >= 10% cut: {pct_ge_10:.1f}%")
     print(f"Results written to {args.output}")
+
+    write_uncertainty_report(args.uncertainty_report, item_info, frac_samples)
+    print(f"Uncertainty report written to {args.uncertainty_report}")
 
 
 if __name__ == "__main__":
