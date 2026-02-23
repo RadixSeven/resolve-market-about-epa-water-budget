@@ -204,14 +204,15 @@
               "wq_evidence_non_water": 1
             },
             {
-              "name": "Alaska Native contamination cleanup grants",
+              "name": "Alaska Native contaminated lands grants",
               "amount": 20000000,
               "available_until": "no_year",
               "statutory_reference": "43 U.S.C. 1601 et seq. (Alaska Native Claims Settlement Act)",
               "notes": [
                 "For Alaska Native Regional/Village Corporations, federally-recognized tribes in Alaska, Alaska Native nonprofits, and intertribal consortia.",
                 "Addresses contamination on lands conveyed under ANCSA that were contaminated at time of conveyance and are on EPA inventory.",
-                "Up to $2,000,000 may be reserved for salaries, expenses, administration, and related grants."
+                "Up to $2,000,000 may be reserved for salaries, expenses, administration, and related grants.",
+                "Originally named: \"Alaska Native contamination cleanup grants\" - renamed to match the FY2025 version"
               ],
               "water_quality_relevance": "partially for water quality programs",
               "water_quality_relevance_certainty": 3,
@@ -394,8 +395,11 @@
       "wq_evidence_non_water": 2,
       "sub_items": [
         {
-          "name": "LUST cleanup activities under SWDA section 9003(h)",
+          "name": "Leaking underground storage tank cleanup (SWDA section 9003(h))",
           "amount": 64583000,
+          "notes": [
+            "Originally named: \"LUST cleanup activities under SWDA section 9003(h)\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 4,
           "wq_evidence_name_reference": 1,
@@ -582,11 +586,12 @@
           ]
         },
         {
-          "name": "(2) US-Mexico Border water and wastewater",
+          "name": "US-Mexico Border water/wastewater infrastructure",
           "amount": 35000000,
           "notes": [
             "For high priority water and wastewater facilities in the US-Mexico Border area, after consultation with appropriate border commission.",
-            "Colonias infrastructure funds require local government to have enforceable ordinance preventing new development lacking water/wastewater infrastructure."
+            "Colonias infrastructure funds require local government to have enforceable ordinance preventing new development lacking water/wastewater infrastructure.",
+            "Originally named: \"(2) US-Mexico Border water and wastewater\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -599,7 +604,7 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(3) Alaska rural and Native Village water/wastewater infrastructure",
+          "name": "Alaska rural and Native village water/wastewater",
           "amount": 39000000,
           "statutory_reference": "33 U.S.C. 1301 (FWPCA 221); 7 U.S.C. 1921 et seq.",
           "notes": [
@@ -607,7 +612,8 @@
             "25% State match required.",
             "Not more than 5% for administrative/overhead expenses.",
             "Awards consistent with Statewide priority list (EPA + USDA).",
-            "Not less than 25% for projects in regional hub communities."
+            "Not less than 25% for projects in regional hub communities.",
+            "Originally named: \"(3) Alaska rural and Native Village water/wastewater infrastructure\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -620,12 +626,13 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(4) Brownfields (CERCLA section 104(k))",
+          "name": "Brownfields (CERCLA section 104(k))",
           "amount": 98000000,
           "statutory_reference": "CERCLA section 104(k)",
           "notes": [
             "Includes grants, interagency agreements, and program support costs.",
-            "At least 10% for persistent poverty counties (20%+ poverty over 30 years per 1993 SAIPE, 2000 Census, most recent SAIPE) or US territories."
+            "At least 10% for persistent poverty counties (20%+ poverty over 30 years per 1993 SAIPE, 2000 Census, most recent SAIPE) or US territories.",
+            "Originally named: \"(4) Brownfields (CERCLA section 104(k))\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 3,
@@ -638,24 +645,11 @@
           "wq_evidence_non_water": 3
         },
         {
-          "name": "(5) Diesel emission reduction grants (Energy Policy Act title VII-G)",
+          "name": "Diesel emissions reduction grants (Energy Policy Act title VII, subtitle G)",
           "amount": 90000000,
           "statutory_reference": "Energy Policy Act of 2005, title VII, subtitle G",
-          "water_quality_relevance": "not for water quality programs",
-          "water_quality_relevance_certainty": 5,
-          "wq_evidence_name_reference": 1,
-          "wq_evidence_authorizing_statute": 1,
-          "wq_evidence_infrastructure": 1,
-          "wq_evidence_monitoring": 1,
-          "wq_evidence_contamination": 1,
-          "wq_evidence_general_purpose": 1,
-          "wq_evidence_non_water": 5
-        },
-        {
-          "name": "(6) Targeted airshed grants",
-          "amount": 67800000,
           "notes": [
-            "In accordance with terms and conditions in the explanatory statement."
+            "Originally named: \"(5) Diesel emission reduction grants (Energy Policy Act title VII-G)\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "not for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -668,12 +662,30 @@
           "wq_evidence_non_water": 5
         },
         {
-          "name": "(7) SDWA 1459A(a)-(j) grants (drinking water contaminant assistance)",
+          "name": "Targeted airshed grants",
+          "amount": 67800000,
+          "notes": [
+            "In accordance with terms and conditions in the explanatory statement.",
+            "Originally named: \"(6) Targeted airshed grants\" - renamed to match the FY2025 version"
+          ],
+          "water_quality_relevance": "not for water quality programs",
+          "water_quality_relevance_certainty": 5,
+          "wq_evidence_name_reference": 1,
+          "wq_evidence_authorizing_statute": 1,
+          "wq_evidence_infrastructure": 1,
+          "wq_evidence_monitoring": 1,
+          "wq_evidence_contamination": 1,
+          "wq_evidence_general_purpose": 1,
+          "wq_evidence_non_water": 5
+        },
+        {
+          "name": "Small and disadvantaged community drinking water assistance (SDWA section 1459A(a)-(j))",
           "amount": 28500000,
           "statutory_reference": "42 U.S.C. 300j-19a (SDWA 1459A(a)-(j))",
           "notes": [
             "May be used by a State to assist owners of non-public drinking water wells for contaminant-related activities under subsection (j).",
-            "May support communities described in subsection (c)(2)."
+            "May support communities described in subsection (c)(2).",
+            "Originally named: \"(7) SDWA 1459A(a)-(j) grants (drinking water contaminant assistance)\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -686,9 +698,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(8) Lead testing in schools and child care (SDWA 1464(d))",
+          "name": "Voluntary school and child care lead testing (SDWA section 1464(d))",
           "amount": 28000000,
           "statutory_reference": "42 U.S.C. 300j-24(d)",
+          "notes": [
+            "Originally named: \"(8) Lead testing in schools and child care (SDWA 1464(d))\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
@@ -700,9 +715,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(9) SDWA 1459B grants (lead service line replacement)",
+          "name": "Lead service line replacement grants (SDWA section 1459B)",
           "amount": 22000000,
           "statutory_reference": "42 U.S.C. 300j-19b",
+          "notes": [
+            "Originally named: \"(9) SDWA 1459B grants (lead service line replacement)\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
@@ -714,9 +732,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(10) SDWA 1459A(l) grants",
+          "name": "Operational sustainability grants (SDWA section 1459A(l))",
           "amount": 6500000,
           "statutory_reference": "42 U.S.C. 300j-19a(l)",
+          "notes": [
+            "Originally named: \"(10) SDWA 1459A(l) grants\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
@@ -728,9 +749,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(11) Sewer overflow and stormwater reuse grants (FWPCA 104(b)(8))",
+          "name": "Sewer overflow and stormwater reuse grants (FWPCA section 104(b)(8))",
           "amount": 25500000,
           "statutory_reference": "33 U.S.C. 1254(b)(8)",
+          "notes": [
+            "Originally named: \"(11) Sewer overflow and stormwater reuse grants (FWPCA 104(b)(8))\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 4,
@@ -742,9 +766,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(12) Water pollution control grants to municipalities (FWPCA 221)",
+          "name": "Decentralized wastewater/alternative water source grants (FWPCA section 221)",
           "amount": 41000000,
           "statutory_reference": "33 U.S.C. 1301",
+          "notes": [
+            "Originally named: \"(12) Water pollution control grants to municipalities (FWPCA 221)\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 5,
@@ -756,9 +783,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(13) America's Water Infrastructure Act section 4304(b) grants",
+          "name": "Water infrastructure workforce development (AWIA 2018 section 4304(b))",
           "amount": 5400000,
           "statutory_reference": "Public Law 115-270, section 4304(b)",
+          "notes": [
+            "Originally named: \"(13) America's Water Infrastructure Act section 4304(b) grants\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 4,
           "wq_evidence_name_reference": 4,
@@ -770,13 +800,14 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(14) Save Our Seas 2.0 Act section 302(a) grants",
+          "name": "Post-consumer materials municipal grants (Save Our Seas 2.0 Act section 302(a))",
           "amount": 3500000,
           "statutory_reference": "33 U.S.C. 4282(a)",
           "notes": [
             "Not more than 2% for administrative costs.",
             "Administrator may also provide grants to intertribal consortia, former Indian reservations in Oklahoma, and Alaska Native Villages.",
-            "This is rated as \"partially for water quality programs\" because it focuses on marine debris, not water quality (nutrients, pathogens, chemical contaminants, etc.), per se."
+            "This is rated as \"partially for water quality programs\" because it focuses on marine debris, not water quality (nutrients, pathogens, chemical contaminants, etc.), per se.",
+            "Originally named: \"(14) Save Our Seas 2.0 Act section 302(a) grants\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 3,
@@ -789,12 +820,13 @@
           "wq_evidence_non_water": 3
         },
         {
-          "name": "(15) Wildfire smoke preparedness grants (Clean Air Act 103(b)(3))",
+          "name": "Wildfire smoke preparedness grants (Clean Air Act section 103(b)(3))",
           "amount": 8500000,
           "statutory_reference": "Clean Air Act section 103(b)(3)",
           "notes": [
             "In accordance with terms and conditions in the explanatory statement.",
-            "Not more than 3% for administrative costs."
+            "Not more than 3% for administrative costs.",
+            "Originally named: \"(15) Wildfire smoke preparedness grants (Clean Air Act 103(b)(3))\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "not for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -824,9 +856,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(17) SDWA 1459F grants",
+          "name": "Assistance for small and underserved communities (SDWA section 1459F)",
           "amount": 2250000,
           "statutory_reference": "42 U.S.C. 300j-19g",
+          "notes": [
+            "Originally named: \"(17) SDWA 1459F grants\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 3,
@@ -838,11 +873,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(18) America's Water Infrastructure Act section 2001 (technical assistance for treatment works)",
+          "name": "Water systems technical assistance (AWIA 2018 section 2001)",
           "amount": 4000000,
           "statutory_reference": "Public Law 115-270 section 2001; 42 U.S.C. 300j-3c note",
           "notes": [
-            "Administrator may award grants/contracts to tribes, intertribal consortia, public/private agencies, institutions, organizations, and individuals without regard to standard procurement requirements."
+            "Administrator may award grants/contracts to tribes, intertribal consortia, public/private agencies, institutions, organizations, and individuals without regard to standard procurement requirements.",
+            "Originally named: \"(18) America's Water Infrastructure Act section 2001 (technical assistance for treatment works)\" - renamed to match the FY2025 version"
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -855,9 +891,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "(19) Stormwater infrastructure technology grants (IIJA 50217(b))",
+          "name": "Stormwater infrastructure grants (IIJA section 50217(b))",
           "amount": 2000000,
           "statutory_reference": "33 U.S.C. 1302f(b); Public Law 117-58",
+          "notes": [
+            "Originally named: \"(19) Stormwater infrastructure technology grants (IIJA 50217(b))\" - renamed to match the FY2025 version"
+          ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
           "wq_evidence_name_reference": 4,

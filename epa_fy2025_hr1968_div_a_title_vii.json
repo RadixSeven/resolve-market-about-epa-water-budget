@@ -46,11 +46,12 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "Unallocated/general",
+          "name": "Science and Technology (general/unallocated)",
           "amount": 738573000,
           "notes": [
             "Remainder of S&T not earmarked by provisos. Covers R&D activities including CERCLA research, personnel, travel, lab equipment, aircraft, and other operating expenses.",
-            "In addition to the direct appropriation, $30,343,000 is transferred in from the Hazardous Substance Superfund account for S&T activities."
+            "In addition to the direct appropriation, $30,343,000 is transferred in from the Hazardous Substance Superfund account for S&T activities.",
+            "Originally named: \"Unallocated/general\" - renamed to match the FY2026 version"
           ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 3,
@@ -138,11 +139,12 @@
               "wq_evidence_non_water": 1
             },
             {
-              "name": "Unallocated/general",
+              "name": "Environmental Programs and Management (general/unallocated)",
               "amount": 2462602000,
               "notes": [
                 "Remainder of main EPM appropriation not earmarked by provisos. Covers personnel, travel, motor vehicles, aircraft, reprints, library memberships, brownfields admin costs, coal combustion residual permit program, and up to $40,000 for official reception and representation expenses.",
-                "FY2025 level is $17,000,000 above FY2024 ($3,178,028,000). The increase is absorbed in this unallocated remainder."
+                "FY2025 level is $17,000,000 above FY2024 ($3,178,028,000). The increase is absorbed in this unallocated remainder.",
+                "Originally named: \"Unallocated/general\" - renamed to match the FY2026 version"
               ],
               "water_quality_relevance": "partially for water quality programs",
               "water_quality_relevance_certainty": 3,
@@ -300,10 +302,11 @@
           "wq_evidence_non_water": 1
         },
         {
-          "name": "Unallocated/general (CERCLA response activities)",
+          "name": "Superfund cleanup and response activities (remainder)",
           "amount": 496029000,
           "notes": [
-            "Remainder for carrying out CERCLA, including sections 111(c)(3), (c)(5), (c)(6), and (e)(4). Funds may be allocated to other Federal agencies per CERCLA section 111(a)."
+            "Remainder for carrying out CERCLA, including sections 111(c)(3), (c)(5), (c)(6), and (e)(4). Funds may be allocated to other Federal agencies per CERCLA section 111(a).",
+            "Originally named: \"Unallocated/general (CERCLA response activities)\" - renamed to match the FY2026 version"
           ],
           "water_quality_relevance": "partially for water quality programs",
           "water_quality_relevance_certainty": 3,
