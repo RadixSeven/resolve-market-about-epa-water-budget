@@ -470,3 +470,34 @@ Percent of samples with >= 10% cut: 0.7%
 Results written to epa_cut_samples.csv
 Uncertainty report written to uncertainty_report.csv
 ```
+
+## Run a large simulation with parallelism
+
+I had Claude Code parallelize the simulation to run 10 million samples.
+
+```bash
+python3 simulate_epa_wq_cuts.py -n 10000000
+```
+
+Yielded:
+```
+Samples: 10000000
+Mean percent cut: 2.73%
+Std dev: 2.27%
+97% credible interval for cut: [-0.66%, 5.66%]
+Percent of samples with >= 10% cut: 0.7%
+Results written to epa_cut_samples.csv
+Uncertainty report written to uncertainty_report.csv
+```
+
+The top contributors to the uncertainty are now:
+
+| name                                                        | amount_2025 | amount_2026 | net_amount  | relevance                            | certainty | mean_frac           | std_frac            | var_contribution   | std_contribution   | pct_of_total_var   |
+|-------------------------------------------------------------|-------------|-------------|-------------|--------------------------------------|-----------|---------------------|---------------------|--------------------|--------------------|--------------------|
+| Superfund cleanup and response activities (remainder)       | 496029000   | 253814000   | 242215000   | partially for water quality programs | 3         | 0.48969300485213957 | 0.3358526614155846  | 6617586975098617.0 | 81348552.38477583  | 39.184446149941145 |
+| Environmental Programs and Management (general/unallocated) | 2462602000  | 2310745000  | 151857000   | partially for water quality programs | 3         | 0.4897502860460073  | 0.33594954611261735 | 2602661868221820.0 | 51016290.22402374  | 15.411034899216164 |
+| Clean Water SRF (formula/unearmarked)                       | 1638861000  | 746098728   | 892762272   | for water quality programs           | 5         | 0.996486953426676   | 0.05284673508623691 | 2225911946482684.0 | 47179571.28337099  | 13.180201050574272 |
+| CPF/CDS projects for Clean Water SRF                        | 0           | 892762272   | -892762272  | for water quality programs           | 5         | 0.9964899659592781  | 0.05284423909397839 | 2225701688355147.5 | 47177342.955651365 | 13.178956057753316 |
+| CPF/CDS projects for Drinking Water SRF                     | 0           | 715364627   | -715364627  | for water quality programs           | 5         | 0.9964895917510374  | 0.05286773526167632 | 1430330291708831.5 | 37819707.715803824 | 8.469356051230305  |
+| Drinking Water SRF (formula/unearmarked)                    | 1126101000  | 410736373   | 715364627   | for water quality programs           | 5         | 0.9964989904417649  | 0.0527440963543009  | 1423648042685519.0 | 37731260.814946525 | 8.4297887243482    |
+| Grants (implementation and training)                        | 0.0         | 30000000    | -30000000.0 | partially for water quality programs | 2         | 0.6088009161391107  | 0.39796768428259754 | 142540449959927.94 | 11939030.528477928 | 0.8440189160581365 |
