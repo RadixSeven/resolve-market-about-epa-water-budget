@@ -501,3 +501,126 @@ The top contributors to the uncertainty are now:
 | CPF/CDS projects for Drinking Water SRF                     | 0           | 715364627   | -715364627  | for water quality programs           | 5         | 0.9964895917510374  | 0.05286773526167632 | 1430330291708831.5 | 37819707.715803824 | 8.469356051230305  |
 | Drinking Water SRF (formula/unearmarked)                    | 1126101000  | 410736373   | 715364627   | for water quality programs           | 5         | 0.9964989904417649  | 0.0527440963543009  | 1423648042685519.0 | 37731260.814946525 | 8.4297887243482    |
 | Grants (implementation and training)                        | 0.0         | 30000000    | -30000000.0 | partially for water quality programs | 2         | 0.6088009161391107  | 0.39796768428259754 | 142540449959927.94 | 11939030.528477928 | 0.8440189160581365 |
+
+## Superfund cleanup and response activities (remainder)
+
+### Asking Claude Code
+
+`Superfund cleanup and response activities (remainder)` is the largest 
+remaining contributor to the uncertainty. I asked Claude
+Code to examine this line item in the original text and see if there is any
+information.
+
+> Could you look at the item 
+> "Superfund cleanup and response activities (remainder)" in both
+> @epa_fy2026_hr6938_div_b_title_ii.json and
+> @epa_fy2025_hr1968_div_a_title_vii.json ?
+> Its partial allocation represents 39% of the remaining variance and I am
+> curious whether the rest of its sibling items (since it is "remainder") or
+> some other context in the bill text might give a hint that would 
+> let me better estimate how much of the money goes to water quality programs.
+
+It responded with the following:
+
+#### Superfund cleanup and response activities (remainder) — water quality analysis
+
+The "Superfund cleanup and response activities (remainder)" item contributes
+39% of the remaining variance in the simulation. This analysis investigates
+whether the bill text or external context can narrow the uncertainty on its
+water quality fraction.
+
+##### Structure (both years)
+
+The Hazardous Substance Superfund has only 3 sub-items:
+
+| Sub-item        | FY2025           | FY2026           |
+|-----------------|------------------|------------------|
+| Transfer to OIG | $11,328,000      | $11,328,000      |
+| Transfer to S&T | $30,343,000      | $17,607,000      |
+| **Remainder**   | **$496,029,000** | **$253,814,000** |
+
+The siblings (transfers) don't help constrain the water quality fraction —
+they just go to general OIG oversight and research.
+
+##### What the remainder funds
+
+The bill text cites CERCLA 111(c)(3), (c)(5), (c)(6), and (e)(4). The actual
+text of these subsections (42 U.S.C. 9611) is:
+
+- **(c)(3)**: Costs of identifying, investigating, and taking **enforcement
+  and abatement action** against releases of hazardous substances
+- **(c)(5)**: **Equipment and overhead** supplementing contractor/non-Federal
+  capabilities
+- **(c)(6)**: **Health and safety of employees** involved in response to
+  hazardous substance releases
+- **(e)(4)**: Budget cap on government response costs
+
+So the remainder funds cleanup operations, site investigation, enforcement,
+equipment, and worker safety — all in service of remediating hazardous
+substance releases.
+
+##### The groundwater connection
+
+The key external fact: **EPA states that groundwater contamination was
+addressed at approximately 85% of National Priorities List sites** where
+remedies were selected
+([source](https://www.epa.gov/superfund/how-superfund-addresses-groundwater-contamination)).
+However, the bill text and Congressional Record provide **no breakdown** of
+spending by contamination medium (water vs. soil vs. air).
+
+##### Assessment
+
+The current rating (`partially for water quality programs`, certainty 3,
+contamination evidence 4) seems reasonable but hard to improve from the bill
+text alone:
+
+- **For higher water relevance**: 85% of NPL sites involve groundwater — the
+  program is heavily water-connected
+- **Against higher water relevance**: Superfund cleanups are multi-media (soil
+  excavation, vapor intrusion, sediment dredging). Even at sites with
+  groundwater contamination, a large share of spending may go to soil and
+  other non-water media. The program's purpose is "hazardous substance"
+  cleanup, not specifically water protection
+
+The bill text simply appropriates a lump sum for "carrying out CERCLA." There
+are no within-amounts, no sub-program breakdowns, and the Congressional Record
+explanatory statement only mentions one specific site (West Lake Landfill in
+Missouri, a reporting requirement). Unlike the categorical grants where we
+found explicit within-amounts to disaggregate, there's nothing in the
+appropriations language to split this item further.
+
+##### Conclusion
+
+The 85% groundwater figure might justify bumping `wq_evidence_contamination`
+from 4 to 5, but there's no way to narrow the "partially" classification or
+increase the certainty from 3 — the bill text simply doesn't provide the
+granularity. The variance contribution from this item is inherent to how
+Congress appropriates Superfund money (as an undifferentiated lump for all
+CERCLA activities).
+
+##### Sources
+
+- [42 U.S.C. 9611 — Uses of Fund](https://www.law.cornell.edu/uscode/text/42/9611)
+- [How Superfund Addresses Groundwater Contamination — EPA](https://www.epa.gov/superfund/how-superfund-addresses-groundwater-contamination)
+
+### What if I set it to "for water quality programs" with certainty 5?
+
+This assumption is the one that would provide the most evidence against
+resolving the market as "NO" (my current best guess) since Superfund suffered a
+significant cut.
+
+With this change, the simulation yields:
+
+```
+Samples: 2000000
+Mean percent cut: 4.70%
+Std dev: 1.68%
+97% credible interval for cut: [3.30%, 5.91%]
+Percent of samples with >= 10% cut: 0.8%
+Results written to epa_cut_samples.csv
+Uncertainty report written to uncertainty_report.csv
+```
+
+This still only pushes the >= 10% cut samples to 0.8%, while removing 40%
+of the variance. So, even in the worst case, where all superfund money is
+for water quality programs, the probability of a >= 10% cut is still very low.
