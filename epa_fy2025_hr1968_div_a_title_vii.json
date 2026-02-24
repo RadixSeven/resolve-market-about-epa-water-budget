@@ -413,7 +413,7 @@
       "funding_source": "general_fund",
       "sub_items": [
         {
-          "name": "Clean Water State Revolving Fund capitalization grants",
+          "name": "(1a) Clean Water State Revolving Fund capitalization grants",
           "amount": 1638861000,
           "statutory_reference": "Federal Water Pollution Control Act, title VI",
           "notes": [
@@ -423,7 +423,8 @@
             "10% of capitalization grants must be used for additional subsidy (forgiveness, negative interest, or grants).",
             "Up to $1,500,000 may be used for Clean Watersheds Needs Survey.",
             "Up to 2% (or $30,000,000, whichever greater) may be reserved for grants to tribes under FWPCA section 518(c).",
-            "Up to 1.5% of aggregate CW SRF (less tribal set-aside) may be reserved for territories under FWPCA title II."
+            "Up to 1.5% of aggregate CW SRF (less tribal set-aside) may be reserved for territories under FWPCA title II.",
+            "Originally named: \"Clean Water State Revolving Fund capitalization grants\" — renamed and restructured into sub-items to match FY2026 structure. FY2024 text (paragraph 1) specifies $787,652,267 within CW SRF for CPF/CDS; the CR zeroes this to $0."
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -433,10 +434,47 @@
           "wq_evidence_monitoring": 3,
           "wq_evidence_contamination": 2,
           "wq_evidence_general_purpose": 1,
-          "wq_evidence_non_water": 1
+          "wq_evidence_non_water": 1,
+          "sub_items": [
+            {
+              "name": "CPF/CDS projects for Clean Water SRF",
+              "amount": 0,
+              "notes": [
+                "FY2024 level was $787,652,267. Sec. 1801(8) substitutes '$0' for '$787,652,267', zeroing out CDS earmarks within the CW SRF.",
+                "For construction of drinking water, wastewater, and storm water infrastructure and water quality protection.",
+                "Projects specified in explanatory statement table.",
+                "Grantees must contribute not less than 20% of project cost unless waiver approved by EPA."
+              ],
+              "water_quality_relevance": "for water quality programs",
+              "water_quality_relevance_certainty": 5,
+              "wq_evidence_name_reference": 5,
+              "wq_evidence_authorizing_statute": 5,
+              "wq_evidence_infrastructure": 5,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 1
+            },
+            {
+              "name": "Clean Water SRF (formula/unearmarked)",
+              "amount": 1638861000,
+              "notes": [
+                "With CDS earmark zeroed by Sec. 1801(8), the entire $1,638,861,000 is available for standard SRF capitalization."
+              ],
+              "water_quality_relevance": "for water quality programs",
+              "water_quality_relevance_certainty": 5,
+              "wq_evidence_name_reference": 5,
+              "wq_evidence_authorizing_statute": 5,
+              "wq_evidence_infrastructure": 5,
+              "wq_evidence_monitoring": 3,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 1
+            }
+          ]
         },
         {
-          "name": "Drinking Water State Revolving Fund capitalization grants",
+          "name": "(1b) Drinking Water State Revolving Fund capitalization grants",
           "amount": 1126101000,
           "statutory_reference": "Safe Drinking Water Act, section 1452",
           "notes": [
@@ -445,7 +483,8 @@
             "14% of capitalization grants must be used for additional subsidy (forgiveness, negative interest, or grants).",
             "Up to 2% (or $20,000,000, whichever greater) may be reserved for grants to tribes under SDWA section 1452(i).",
             "Up to 1.5% may be reserved for territories under SDWA section 1452(j).",
-            "Up to $12,000,000 shall be reserved for unregulated contaminant monitoring costs under SDWA section 1445(a)(2)(C)."
+            "Up to $12,000,000 shall be reserved for unregulated contaminant monitoring costs under SDWA section 1445(a)(2)(C).",
+            "Originally named: \"Drinking Water State Revolving Fund capitalization grants\" — renamed and restructured into sub-items to match FY2026 structure. FY2024 text (paragraph 1) specifies $631,659,905 within DW SRF for CPF/CDS; the CR zeroes this to $0."
           ],
           "water_quality_relevance": "for water quality programs",
           "water_quality_relevance_certainty": 5,
@@ -455,7 +494,44 @@
           "wq_evidence_monitoring": 3,
           "wq_evidence_contamination": 2,
           "wq_evidence_general_purpose": 1,
-          "wq_evidence_non_water": 1
+          "wq_evidence_non_water": 1,
+          "sub_items": [
+            {
+              "name": "CPF/CDS projects for Drinking Water SRF",
+              "amount": 0,
+              "notes": [
+                "FY2024 level was $631,659,905. Sec. 1801(8) substitutes '$0' for '$631,659,905', zeroing out CDS earmarks within the DW SRF.",
+                "For construction of drinking water, wastewater, and storm water infrastructure and water quality protection.",
+                "Projects specified in explanatory statement table.",
+                "Grantees must contribute not less than 20% of project cost unless waiver approved by EPA."
+              ],
+              "water_quality_relevance": "for water quality programs",
+              "water_quality_relevance_certainty": 5,
+              "wq_evidence_name_reference": 5,
+              "wq_evidence_authorizing_statute": 5,
+              "wq_evidence_infrastructure": 5,
+              "wq_evidence_monitoring": 2,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 1
+            },
+            {
+              "name": "Drinking Water SRF (formula/unearmarked)",
+              "amount": 1126101000,
+              "notes": [
+                "With CDS earmark zeroed by Sec. 1801(8), the entire $1,126,101,000 is available for standard SRF capitalization."
+              ],
+              "water_quality_relevance": "for water quality programs",
+              "water_quality_relevance_certainty": 5,
+              "wq_evidence_name_reference": 5,
+              "wq_evidence_authorizing_statute": 5,
+              "wq_evidence_infrastructure": 5,
+              "wq_evidence_monitoring": 3,
+              "wq_evidence_contamination": 2,
+              "wq_evidence_general_purpose": 1,
+              "wq_evidence_non_water": 1
+            }
+          ]
         },
         {
           "name": "US-Mexico Border water/wastewater infrastructure",
