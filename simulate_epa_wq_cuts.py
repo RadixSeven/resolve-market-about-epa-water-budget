@@ -10,9 +10,11 @@ import argparse
 import csv
 import json
 import math
+import os
 import random
 import sys
 from collections.abc import Generator
+from multiprocessing import Pool
 from pathlib import Path
 from typing import NamedTuple
 
@@ -178,6 +180,40 @@ def sample_year(
     return total
 
 
+def _run_batch(
+    args_tuple: tuple[
+        JsonValue, JsonValue, ReclassifyTables, list[str], int, int
+    ],
+) -> tuple[list[tuple[float, float, float]], dict[str, list[float]]]:
+    """Run a batch of Monte Carlo samples in a worker process.
+
+    Args:
+        args_tuple: (data_2025, data_2026, reclassify_tables, item_names,
+                      batch_size, worker_seed)
+
+    Returns:
+        (samples_chunk, frac_samples_chunk) where samples_chunk is a list of
+        (amt_2026, amt_2025, pct_cut) tuples and frac_samples_chunk maps each
+        item name to the list of sampled fractions for this batch.
+    """
+    data_2025, data_2026, reclassify_tables, item_names, batch_size, worker_seed = (
+        args_tuple
+    )
+    rng = random.Random(worker_seed)
+    samples: list[tuple[float, float, float]] = []
+    frac_samples: dict[str, list[float]] = {name: [] for name in item_names}
+    for _ in range(batch_size):
+        name_to_frac: dict[str, float] = {}
+        amt_2025 = sample_year(data_2025, rng, reclassify_tables, name_to_frac)
+        amt_2026 = sample_year(data_2026, rng, reclassify_tables, name_to_frac)
+        pct_cut = 0 if amt_2025 == 0 else (
+            amt_2025 - amt_2026) / amt_2025 * 100.0
+        samples.append((amt_2026, amt_2025, pct_cut))
+        for name in item_names:
+            frac_samples[name].append(name_to_frac[name])
+    return samples, frac_samples
+
+
 # ---------------------------------------------------------------------------
 # Uncertainty report
 # ---------------------------------------------------------------------------
@@ -294,6 +330,12 @@ def main() -> None:
         default="uncertainty_report.csv",
         help="Output CSV file path for uncertainty contribution report (default: uncertainty_report.csv)",
     )
+    parser.add_argument(
+        "-j", "--workers",
+        type=int,
+        default=os.cpu_count(),
+        help="Number of worker processes (default: number of CPUs)",
+    )
     args: argparse.Namespace = parser.parse_args()
 
     base: Path = Path(__file__).resolve().parent
@@ -308,19 +350,46 @@ def main() -> None:
     counts: dict[Classification, int] = count_relevance_classes(data_2025, data_2026)
     reclassify_tables: ReclassifyTables = build_reclassify_tables(counts)
 
-    rng: random.Random = random.Random(args.seed)
+    item_names: list[str] = list(item_info)
+    num_workers: int = max(1, args.workers)
 
-    frac_samples: dict[str, list[float]] = {name: [] for name in item_info}
-    samples: list[tuple[float, float, float]] = []
-    for _ in range(args.num_samples):
-        name_to_frac: dict[str, float] = {}
-        amt_2025 = sample_year(data_2025, rng, reclassify_tables, name_to_frac)
-        amt_2026 = sample_year(data_2026, rng, reclassify_tables, name_to_frac)
-        pct_cut = 0 if amt_2025 == 0 else (
-            amt_2025 - amt_2026) / amt_2025 * 100.0
-        samples.append((amt_2026, amt_2025, pct_cut))
-        for name in item_info:
-            frac_samples[name].append(name_to_frac[name])
+    if num_workers == 1:
+        # Serial path — avoids multiprocessing overhead
+        rng: random.Random = random.Random(args.seed)
+        frac_samples: dict[str, list[float]] = {name: [] for name in item_names}
+        samples: list[tuple[float, float, float]] = []
+        for _ in range(args.num_samples):
+            name_to_frac: dict[str, float] = {}
+            amt_2025 = sample_year(data_2025, rng, reclassify_tables, name_to_frac)
+            amt_2026 = sample_year(data_2026, rng, reclassify_tables, name_to_frac)
+            pct_cut = 0 if amt_2025 == 0 else (
+                amt_2025 - amt_2026) / amt_2025 * 100.0
+            samples.append((amt_2026, amt_2025, pct_cut))
+            for name in item_names:
+                frac_samples[name].append(name_to_frac[name])
+    else:
+        # Parallel path — split work across processes
+        base_batch, remainder = divmod(args.num_samples, num_workers)
+        batch_args = []
+        for i in range(num_workers):
+            batch_size = base_batch + (1 if i < remainder else 0)
+            if batch_size == 0:
+                continue
+            worker_seed = args.seed + i
+            batch_args.append((
+                data_2025, data_2026, reclassify_tables,
+                item_names, batch_size, worker_seed,
+            ))
+        with Pool(processes=len(batch_args)) as pool:
+            results = pool.map(_run_batch, batch_args)
+
+        # Merge results from all workers
+        samples = []
+        frac_samples = {name: [] for name in item_names}
+        for samples_chunk, frac_chunk in results:
+            samples.extend(samples_chunk)
+            for name in item_names:
+                frac_samples[name].extend(frac_chunk[name])
 
     # Write CSV
     with open(args.output, "w", newline="") as f:
