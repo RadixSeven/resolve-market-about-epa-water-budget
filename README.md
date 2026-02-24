@@ -380,3 +380,93 @@ The FY2025 JSON has the entire $1,106,333,000 as a single leaf. The FY2026 JSON 
 #### Resolution
 
 Since the FY2024 appropriations text explicitly specifies the same four within-amounts, the FY2025 JSON was restructured to match FY2026: renamed to "(23) State/tribal multi-media and single media grants" and broken into the same 5 sub-items with the four specific earmarks and a general/unallocated remainder ($1,030,596,000 = $1,106,333,000 - $46,250,000 - $9,500,000 - $1,475,000 - $18,512,000). This makes the 5 sub-items directly comparable across years, allowing the simulation to enforce the same water quality fraction for matching leaves.
+
+### Run the simulation again after modifications
+
+```bash
+python3 simulate_epa_wq_cuts.py -n 200000
+```
+
+Yielded:
+```
+Samples: 200000
+Mean percent cut: 2.69%
+Std dev: 3.11%
+97% credible interval for cut: [-0.72%, 7.69%]
+Percent of samples with >= 10% cut: 1.1%
+Results written to epa_cut_samples.csv
+Uncertainty report written to uncertainty_report.csv
+```
+
+## Harmonize the next highest variance contributor
+
+In the same Claude Code session as above, I wrote:
+
+> Now do the same analysis and clean-up for
+> "Clean Water State Revolving Fund capitalization grants" and
+> "Drinking Water State Revolving Fund capitalization grants"
+
+Claude Code added the following text, making the more-extensive (but still
+reasonable) modifications described in the text to both JSON files to harmonize
+the structure of these programs across 2025 and 2026.
+
+### Clean Water SRF and Drinking Water SRF structural mismatch
+
+**FY2025 leaves**:
+- "Clean Water State Revolving Fund capitalization grants" — $1,638,861,000 (leaf)
+- "Drinking Water State Revolving Fund capitalization grants" — $1,126,101,000 (leaf)
+
+**FY2026 structure**:
+- "(1) State Revolving Funds" — $2,764,962,000 (parent)
+  - "(1a) Clean Water State Revolving Fund capitalization grants" — $1,638,861,000 (parent)
+    - "CPF/CDS projects for Clean Water SRF" — $892,762,272 (leaf)
+    - "Clean Water SRF (formula/unearmarked)" — $746,098,728 (leaf)
+  - "(1b) Drinking Water State Revolving Fund capitalization grants" — $1,126,101,000 (parent)
+    - "CPF/CDS projects for Drinking Water SRF" — $715,364,627 (leaf)
+    - "Drinking Water SRF (formula/unearmarked)" — $410,736,373 (leaf)
+
+#### Evidence FOR being the same programs
+
+1. **Identical statutory authority.** FY2024 paragraph (1) and FY2026 paragraph (1) both authorize CW SRF under title VI of the Federal Water Pollution Control Act and DW SRF under section 1452 of the Safe Drinking Water Act.
+2. **Identical total amounts.** Both years: CW SRF = $1,638,861,000 and DW SRF = $1,126,101,000.
+3. **Same CPF/CDS within-amounts in FY2024 text.** The FY2024 appropriations text explicitly specifies $787,652,267 within CW SRF and $631,659,905 within DW SRF for CPF/CDS construction grants — the same within-amounts that appear as sub-items in FY2026 (though FY2026 has different CDS amounts: $892,762,272 and $715,364,627).
+4. **Same provisos.** Both years have identical green infrastructure requirements (10% CW, discretionary DW), subsidy requirements (10% CW, 14% DW), tribal set-asides, territory set-asides, and Clean Watersheds Needs Survey authority.
+
+#### Evidence AGAINST being the same programs
+
+None. These are unambiguously the same programs.
+
+#### Structural difference
+
+The FY2025 CR zeroed both CDS earmarks (Sec. 1801(8) substitutes $0 for $787,652,267 and $631,659,905), making the entire amounts available for standard capitalization. FY2026 has active CDS earmarks at different amounts ($892,762,272 and $715,364,627).
+
+#### Resolution
+
+FY2025 items were renamed to match FY2026 parent names ("(1a) Clean Water State Revolving Fund capitalization grants" and "(1b) Drinking Water State Revolving Fund capitalization grants") and broken into the same 2 sub-items each: CPF/CDS at $0 (zeroed by CR) + formula/unearmarked at the full amount. This makes all 4 leaf items directly comparable across years. All sub-items have certainty 5 and "for water quality programs" in both years, so this structural change mainly improves comparability rather than reducing simulation variance (these items already had no uncertainty).
+
+### It does reduce variance
+
+Claude Code is wrong when it says "this structural change mainly improves
+comparability rather than reducing simulation variance (these items already had
+no uncertainty)". Since the items had different names, the simulation treated
+them as different items with independent random draws for the water quality
+fraction and for whether the classification was correct. Now, they have a
+shared name, so they will share the same random draws, reducing variance. It is
+not large (2.27% std dev instead of 3.11%), but it is an improvement.
+
+### Run the simulation again after modifications
+
+```bash
+python3 simulate_epa_wq_cuts.py -n 200000
+```
+
+Yielded:
+```
+Samples: 200000
+Mean percent cut: 2.73%
+Std dev: 2.27%
+97% credible interval for cut: [-0.66%, 5.65%]
+Percent of samples with >= 10% cut: 0.7%
+Results written to epa_cut_samples.csv
+Uncertainty report written to uncertainty_report.csv
+```
